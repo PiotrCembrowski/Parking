@@ -1,25 +1,19 @@
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { Stats } from "@/components/stats"
-import { Services } from "@/components/services"
-import { About } from "@/components/about"
-import { Testimonials } from "@/components/testimonials"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
+import { Hero } from "@/components/hero";
+import { Stats } from "@/components/stats";
+import { Services } from "@/components/services";
+import { About } from "@/components/about";
+import { Testimonials } from "@/components/testimonials";
+import { Contact } from "@/components/contact";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Stats />
-        <Services />
-        <About />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <Stats />
+      <Services />
+      <About />
+      <Testimonials />
+      <Contact />
     </>
-  )
+  );
 }
