@@ -1,19 +1,19 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Phone, Menu } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Phone, Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetClose,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
+  { href: "parking-lot-striping-tulsa", label: "Tulsa" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 export function Header() {
   return (
@@ -24,7 +24,9 @@ export function Header() {
             <div className="h-2 w-8 bg-accent rounded-full" />
             <div className="h-2 w-8 bg-foreground rounded-full" />
           </div>
-          <span className="text-xl font-bold tracking-tight">PrecisionLine</span>
+          <span className="text-xl font-bold tracking-tight">
+            PrecisionLine
+          </span>
         </Link>
 
         <div className="hidden lg:flex lg:items-center lg:gap-8">
@@ -40,7 +42,10 @@ export function Header() {
         </div>
 
         <div className="hidden lg:flex lg:items-center lg:gap-4">
-          <a href="tel:+15551234567" className="flex items-center gap-2 text-sm font-medium">
+          <a
+            href="tel:+15551234567"
+            className="flex items-center gap-2 text-sm font-medium"
+          >
             <Phone className="h-4 w-4" />
             (555) 123-4567
           </a>
@@ -68,7 +73,10 @@ export function Header() {
                   </Link>
                 </SheetClose>
               ))}
-              <a href="tel:+15551234567" className="flex items-center gap-2 font-medium py-2">
+              <a
+                href="tel:+15551234567"
+                className="flex items-center gap-2 font-medium py-2"
+              >
                 <Phone className="h-4 w-4" />
                 (555) 123-4567
               </a>
@@ -82,5 +90,5 @@ export function Header() {
         </Sheet>
       </nav>
     </header>
-  )
+  );
 }
