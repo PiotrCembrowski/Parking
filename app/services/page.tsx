@@ -116,7 +116,7 @@ export default function ServicesPage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-background/30 text-background hover:bg-background/10"
+                  className="border-background/30 text-background text-gray-700 hover:bg-background/10 hover:text-white"
                 >
                   <Link href="tel:+19185551234">Call (918) 555-1234</Link>
                 </Button>
