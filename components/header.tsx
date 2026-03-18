@@ -12,7 +12,7 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "blog", label: "Blog" },
   { href: "parking-lot-striping-tulsa", label: "Tulsa" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "testimonials", label: "Testimonials" },
   { href: "contact", label: "Contact" },
 ];
 
