@@ -20,10 +20,10 @@ const posts = [
     image: "/images/ada-marking.jpg",
   },
   {
-    slug: "how-often-restripe-parking-lot",
-    title: "How Often Should You Restripe Your Parking Lot?",
+    slug: "how-often-repaint-parking-lot-lines",
+    title: "How Often Should Parking Lot Lines Be Repainted?",
     excerpt:
-      "Discover the factors that affect striping longevity and the signs that indicate it's time for a fresh coat.",
+      "Clear parking lot markings are essential for safety, organization, and compliance with accessibility regulations. However, many property owners are unsure how often parking lot striping should be refreshed.",
     date: "March 8, 2026",
     category: "Maintenance",
     image: "/images/striping-work.jpg",
