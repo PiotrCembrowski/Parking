@@ -14,7 +14,7 @@ const posts = [
     slug: "ada-compliance-parking-lot-guide",
     title: "ADA Compliance Guide for Parking Lots",
     excerpt:
-      "Learn the essential requirements for ADA-compliant parking spaces, including dimensions, signage, and access aisle specifications.",
+      "Ensuring that your parking lot is compliant with ADA (Americans with Disabilities Act) regulations is not just a legal requirement—it is an essential part of providing equal access to all visitors.",
     date: "March 15, 2026",
     category: "Compliance",
     image: "/images/ada-marking.jpg",
@@ -23,31 +23,31 @@ const posts = [
     slug: "how-often-repaint-parking-lot-lines",
     title: "How Often Should Parking Lot Lines Be Repainted?",
     excerpt:
-      "Clear parking lot markings are essential for safety, organization, and compliance with accessibility regulations. However, many property owners are unsure how often parking lot striping should be refreshed.",
+      "Parking lot striping is more than just paint on asphalt—it plays a critical role in safety, organization, and the overall functionality of a commercial property.",
     date: "March 8, 2026",
     category: "Maintenance",
     image: "/images/striping-work.jpg",
   },
   {
-    slug: "parking-lot-layout-maximize-spaces",
+    slug: "parking-lot-striping-cost",
     title: "Parking Lot Layout: Maximizing Your Available Space",
     excerpt:
-      "Strategic layout design can increase your parking capacity by up to 20%. Here's how professionals approach lot design.",
+      "Understanding the cost of parking lot striping is essential for businesses that want to maintain safe and professional-looking properties.",
     date: "February 28, 2026",
     category: "Design",
     image: "/images/hero-parking.jpg",
   },
   {
-    slug: "fire-lane-marking-requirements",
+    slug: "parking-lot-maintenance",
     title: "Fire Lane Marking Requirements: What Property Owners Need to Know",
     excerpt:
-      "Fire lane violations can result in hefty fines. Ensure your property meets local fire code requirements with proper markings.",
+      "Parking lot striping is a critical part of maintaining a safe, organized, and professional commercial property. ",
     date: "February 20, 2026",
     category: "Compliance",
     image: "/images/striping-work.jpg",
   },
   {
-    slug: "weather-impact-parking-lot-striping",
+    slug: "signs-your-parking-lot-needs-new-striping",
     title: "How Weather Affects Parking Lot Striping Durability",
     excerpt:
       "Sun, rain, and temperature fluctuations all impact your striping. Learn how to plan maintenance around seasonal changes.",
@@ -55,15 +55,15 @@ const posts = [
     category: "Maintenance",
     image: "/images/hero-parking.jpg",
   },
-  {
-    slug: "thermoplastic-vs-paint-striping",
-    title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
-    excerpt:
-      "Compare durability, cost, and application methods to choose the best striping material for your parking lot.",
-    date: "February 5, 2026",
-    category: "Materials",
-    image: "/images/ada-marking.jpg",
-  },
+  // {
+  //   slug: "thermoplastic-vs-paint-striping",
+  //   title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
+  //   excerpt:
+  //     "Compare durability, cost, and application methods to choose the best striping material for your parking lot.",
+  //   date: "February 5, 2026",
+  //   category: "Materials",
+  //   image: "/images/ada-marking.jpg",
+  // },
 ];
 
 export default function BlogPage() {
