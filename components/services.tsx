@@ -1,32 +1,68 @@
-import Image from "next/image"
-import { ArrowUpRight, CheckCircle } from "lucide-react"
+import Image from "next/image";
+import { ArrowUpRight, CheckCircle } from "lucide-react";
 
 const services = [
   {
     number: "01",
     title: "Parking Lot Striping",
-    description: "Precision line marking for parking spaces, traffic lanes, and directional arrows using premium traffic paint that withstands heavy use.",
-    features: ["Standard & handicap spaces", "Fire lanes & no parking zones", "Directional arrows & symbols"],
+    description:
+      "Professional parking lot striping services designed to improve safety, organization, and traffic flow. We use high-quality traffic paint and precision equipment to create crisp, long-lasting markings for all types of commercial properties.\n\nOur parking lot striping services include:",
+    features: [
+      "Standard parking spaces",
+      "ADA handicap parking spaces",
+      "Fire lanes & no parking zones",
+      "Directional arrows & traffic flow markings",
+      "Loading zones & reserved parking",
+      "Crosswalks & pedestrian safety markings",
+    ],
+    text: "Fresh striping improves visibility, reduces confusion, and maximizes your available parking capacity.",
   },
   {
     number: "02",
-    title: "ADA Compliance",
-    description: "Ensure your property meets all federal accessibility requirements with properly marked and positioned accessible parking spaces.",
-    features: ["Wheelchair symbols", "Access aisles", "Signage coordination"],
+    title: "ADA Compliance Striping",
+    description:
+      "Ensure your property meets ADA parking lot compliance requirements with professionally marked accessible parking spaces. We follow federal accessibility guidelines to help improve accessibility, reduce liability, and keep your property compliant.\n\nOur ADA compliance services include:",
+    features: [
+      "Handicap parking space striping",
+      "Wheelchair accessibility symbols",
+      "Van-accessible parking spaces",
+      "Access aisle striping",
+      "ADA signage placement",
+      "Compliance layout adjustments",
+    ],
+    text: "Proper ADA striping helps avoid fines, improves accessibility, and ensures your property meets current regulations.",
   },
   {
     number: "03",
-    title: "Layout & Design",
-    description: "Maximize your parking capacity with efficient lot layouts designed by our experienced team of pavement marking specialists.",
-    features: ["Capacity optimization", "Traffic flow analysis", "CAD designs available"],
+    title: "Parking Lot Layout & Design",
+    description:
+      "Maximize your parking capacity with professional parking lot layout and design services. Our team evaluates your property and creates efficient layouts that improve traffic flow, increase parking spaces, and enhance safety.\n\nOur layout and design services include:",
+    features: [
+      "Parking capacity optimization",
+      "Traffic flow planning",
+      "New lot layout design",
+      "Re-striping and layout redesign",
+      "Safety improvements",
+      "CAD layout designs available",
+    ],
+    text: "A well-designed parking lot improves efficiency, reduces congestion, and enhances the customer experience.",
   },
   {
     number: "04",
-    title: "Seal Coating",
-    description: "Protect your asphalt investment with professional seal coating that extends pavement life and enhances appearance.",
-    features: ["Crack filling", "Surface protection", "UV resistance"],
+    title: "Sealcoating Services",
+    description:
+      "Protect your asphalt investment with professional sealcoating services that extend pavement life and improve curb appeal. Sealcoating helps prevent damage caused by weather, traffic, and UV exposure.\n\nOur sealcoating services include:",
+    features: [
+      "Asphalt sealcoating",
+      "Crack filling and repair",
+      "Surface protection",
+      "UV and weather resistance",
+      "Preventative asphalt maintenance",
+      "Extended pavement lifespan",
+    ],
+    text: "Regular sealcoating protects your pavement, reduces repair costs, and keeps your parking lot looking professional.",
   },
-]
+];
 
 export function Services() {
   return (
@@ -37,10 +73,14 @@ export function Services() {
             Our Services
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
-            Comprehensive pavement marking solutions
+            Professional Parking Lot Striping & Pavement Marking Services
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From initial layout to final striping, we handle every aspect of your parking lot marking needs with precision and care.
+            We provide complete parking lot striping and pavement marking
+            solutions for commercial properties, retail centers, office
+            buildings, warehouses, and industrial facilities. From initial
+            layout planning to final striping, our team delivers clean, durable
+            markings that improve safety, maximize space, and ensure compliance.
           </p>
         </div>
 
@@ -57,7 +97,7 @@ export function Services() {
                 <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">{service.title}</h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
+              <p className="whitespace-pre-line mt-3 text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
               <ul className="mt-6 space-y-2">
@@ -68,6 +108,9 @@ export function Services() {
                   </li>
                 ))}
               </ul>
+              <p className="whitespace-pre-line mt-4 text-sm text-muted-foreground">
+                {service.text}
+              </p>
             </div>
           ))}
         </div>
@@ -92,5 +135,5 @@ export function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }

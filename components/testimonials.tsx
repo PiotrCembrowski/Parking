@@ -1,27 +1,30 @@
-import { Star } from "lucide-react"
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "PrecisionLine transformed our shopping center parking lot. The lines are crisp, the ADA markings are perfect, and they finished ahead of schedule. Highly recommend.",
+    quote:
+      "PrecisionLine transformed our shopping center parking lot. The lines are crisp, the ADA markings are perfect, and they finished ahead of schedule. Highly recommend.",
     author: "Michael Torres",
     role: "Property Manager, Westfield Retail Group",
   },
   {
-    quote: "We've used PrecisionLine for three years now across all our commercial properties. Consistent quality, fair pricing, and great communication every time.",
+    quote:
+      "We've used PrecisionLine for three years now across all our commercial properties. Consistent quality, fair pricing, and great communication every time.",
     author: "Sarah Chen",
     role: "Director of Facilities, Harbor Real Estate",
   },
   {
-    quote: "They restriped our 500-space lot overnight with zero disruption to our business. The attention to detail on our custom logo stencils was impressive.",
+    quote:
+      "They restriped our 500-space lot overnight with zero disruption to our business. The attention to detail on our custom logo stencils was impressive.",
     author: "David Wilson",
     role: "Operations Manager, AutoNation Dealership",
   },
-]
+];
 
 export function Testimonials() {
   return (
     <section id="testimonials" className="py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             Testimonials
@@ -54,7 +57,7 @@ export function Testimonials() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }
