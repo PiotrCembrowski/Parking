@@ -11,6 +11,32 @@ interface FormState {
   error?: string;
 }
 
+function normalizeRecipientEmail(value: string | undefined): string {
+  if (!value) return defaultRecipientEmail;
+
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .replace(/@gmal\.co+?m$/, "@gmail.com");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(normalized)) {
+    console.error(
+      `Invalid LEAD_RECIPIENT_EMAIL "${value}", falling back to ${defaultRecipientEmail}.`,
+    );
+    return defaultRecipientEmail;
+  }
+
+  return normalized;
+}
+
+function createResendErrorMessage(context: string, message: string) {
+  console.error(`Resend error (${context}): ${message}`);
+  return {
+    error: `Couldn't send your message: ${message}. Please verify RESEND_API_KEY, RESEND_FROM_EMAIL, and LEAD_RECIPIENT_EMAIL.`,
+  };
+}
+
 /* ============================= */
 /* Quote Request Form */
 /* ============================= */
