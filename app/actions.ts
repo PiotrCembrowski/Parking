@@ -3,6 +3,8 @@
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const recipientEmail =
+  process.env.LEAD_RECIPIENT_EMAIL ?? "biuroc4agency@gmail.com";
 
 interface FormState {
   success?: boolean;
@@ -18,6 +20,11 @@ export async function submitQuoteRequest(
   formData: FormData,
 ): Promise<FormState> {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY environment variable.");
+      return { error: "Email service is not configured. Please try again soon." };
+    }
+
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
@@ -33,9 +40,10 @@ export async function submitQuoteRequest(
       return { error: "Please enter a valid email address." };
     }
 
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Website Quote <onboarding@resend.dev>",
-      to: "biuroc4agency@gmail.com",
+      to: recipientEmail,
+      replyTo: email,
       subject: "New Quote Request - Parking Lot Striping",
       html: `
         <h2>New Quote Request</h2>
@@ -55,6 +63,14 @@ export async function submitQuoteRequest(
       `,
     });
 
+    if (error) {
+      console.error("Resend error (quote request):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
+
     return { success: true };
   } catch (error) {
     console.error(error);
@@ -71,6 +87,11 @@ export async function submitLeadForm(
   formData: FormData,
 ): Promise<FormState> {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY environment variable.");
+      return { error: "Email service is not configured. Please try again soon." };
+    }
+
     const name = formData.get("name") as string;
     const business = formData.get("business") as string;
     const email = formData.get("email") as string;
@@ -86,9 +107,10 @@ export async function submitLeadForm(
       return { error: "Please enter a valid email address." };
     }
 
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Website Lead <onboarding@resend.dev>",
-      to: "biuroc4agency@gmail.com",
+      to: recipientEmail,
+      replyTo: email,
       subject: "New Parking Lot Striping Lead",
       html: `
         <h2>New Lead Received</h2>
@@ -103,6 +125,14 @@ export async function submitLeadForm(
         <p>This lead came from your website lead form.</p>
       `,
     });
+
+    if (error) {
+      console.error("Resend error (lead form):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
