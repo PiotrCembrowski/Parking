@@ -3,8 +3,8 @@
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const defaultRecipientEmail = "biuroc4agency@gmail.com";
-const defaultFromEmail = "Website <onboarding@resend.dev>";
+const recipientEmail =
+  process.env.LEAD_RECIPIENT_EMAIL ?? "biuroc4agency@gmail.com";
 
 interface FormState {
   success?: boolean;
@@ -66,12 +66,9 @@ export async function submitQuoteRequest(
       return { error: "Please enter a valid email address." };
     }
 
-    const recipientEmail = normalizeRecipientEmail(process.env.LEAD_RECIPIENT_EMAIL);
-    const fromEmail = process.env.RESEND_FROM_EMAIL ?? defaultFromEmail;
-
     const { error } = await resend.emails.send({
-      from: fromEmail,
-      to: [recipientEmail],
+      from: "Website Quote <onboarding@resend.dev>",
+      to: recipientEmail,
       replyTo: email,
       subject: "New Quote Request - Parking Lot Striping",
       html: `
@@ -92,7 +89,13 @@ export async function submitQuoteRequest(
       `,
     });
 
-    if (error) return createResendErrorMessage("quote request", error.message);
+    if (error) {
+      console.error("Resend error (quote request):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
@@ -130,12 +133,9 @@ export async function submitLeadForm(
       return { error: "Please enter a valid email address." };
     }
 
-    const recipientEmail = normalizeRecipientEmail(process.env.LEAD_RECIPIENT_EMAIL);
-    const fromEmail = process.env.RESEND_FROM_EMAIL ?? defaultFromEmail;
-
     const { error } = await resend.emails.send({
-      from: fromEmail,
-      to: [recipientEmail],
+      from: "Website Lead <onboarding@resend.dev>",
+      to: recipientEmail,
       replyTo: email,
       subject: "New Parking Lot Striping Lead",
       html: `
@@ -152,7 +152,13 @@ export async function submitLeadForm(
       `,
     });
 
-    if (error) return createResendErrorMessage("lead form", error.message);
+    if (error) {
+      console.error("Resend error (lead form):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
