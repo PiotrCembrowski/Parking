@@ -1,7 +1,10 @@
 "use server";
 
-const defaultRecipientEmail = "biuroc4agency@gmail.com";
-const defaultFromEmail = "Website <onboarding@resend.dev>";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const recipientEmail =
+  process.env.LEAD_RECIPIENT_EMAIL ?? "biuroc4agency@gmail.com";
 
 interface FormState {
   success?: boolean;
@@ -30,66 +33,8 @@ function normalizeRecipientEmail(value: string | undefined): string {
 function createResendErrorMessage(context: string, message: string) {
   console.error(`Resend error (${context}): ${message}`);
   return {
-    error: `Email delivery failed: ${message}`,
+    error: `Couldn't send your message: ${message}. Please verify RESEND_API_KEY, RESEND_FROM_EMAIL, and LEAD_RECIPIENT_EMAIL.`,
   };
-}
-
-function getErrorMessage(error: unknown): string {
-  if (error instanceof Error) return error.message;
-  try {
-    return JSON.stringify(error);
-  } catch {
-    return "Unknown error";
-  }
-}
-
-interface SendEmailParams {
-  from: string;
-  to: string[];
-  replyTo?: string;
-  subject: string;
-  html: string;
-}
-
-async function sendEmailWithResend({
-  from,
-  to,
-  replyTo,
-  subject,
-  html,
-}: SendEmailParams): Promise<{ error?: string }> {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return { error: "Missing RESEND_API_KEY." };
-  }
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to,
-      reply_to: replyTo,
-      subject,
-      html,
-    }),
-  });
-
-  const payload = (await response.json().catch(() => null)) as
-    | { message?: string }
-    | null;
-
-  if (!response.ok) {
-    const message =
-      payload?.message ??
-      `Resend request failed with status ${response.status}.`;
-    return { error: message };
-  }
-
-  return {};
 }
 
 /* ============================= */
@@ -121,12 +66,9 @@ export async function submitQuoteRequest(
       return { error: "Please enter a valid email address." };
     }
 
-    const recipientEmail = normalizeRecipientEmail(process.env.LEAD_RECIPIENT_EMAIL);
-    const fromEmail = process.env.RESEND_FROM_EMAIL ?? defaultFromEmail;
-
-    const { error } = await sendEmailWithResend({
-      from: fromEmail,
-      to: [recipientEmail],
+    const { error } = await resend.emails.send({
+      from: "Website Quote <onboarding@resend.dev>",
+      to: recipientEmail,
       replyTo: email,
       subject: "New Quote Request - Parking Lot Striping",
       html: `
@@ -147,7 +89,13 @@ export async function submitQuoteRequest(
       `,
     });
 
-    if (error) return createResendErrorMessage("quote request", error.message);
+    if (error) {
+      console.error("Resend error (quote request):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
@@ -184,12 +132,9 @@ export async function submitLeadForm(
       return { error: "Please enter a valid email address." };
     }
 
-    const recipientEmail = normalizeRecipientEmail(process.env.LEAD_RECIPIENT_EMAIL);
-    const fromEmail = process.env.RESEND_FROM_EMAIL ?? defaultFromEmail;
-
-    const { error } = await sendEmailWithResend({
-      from: fromEmail,
-      to: [recipientEmail],
+    const { error } = await resend.emails.send({
+      from: "Website Lead <onboarding@resend.dev>",
+      to: recipientEmail,
       replyTo: email,
       subject: "New Parking Lot Striping Lead",
       html: `
@@ -206,7 +151,13 @@ export async function submitLeadForm(
       `,
     });
 
-    if (error) return createResendErrorMessage("lead form", error.message);
+    if (error) {
+      console.error("Resend error (lead form):", error);
+      return {
+        error:
+          "We couldn't send your message right now. Please call us or try again shortly.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
