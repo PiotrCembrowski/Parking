@@ -99,8 +99,7 @@ export async function submitQuoteRequest(
 
     return { success: true };
   } catch (error) {
-    console.error(error);
-    return { error: "Something went wrong. Please try again." };
+    return createResendErrorMessage("quote request catch", getErrorMessage(error));
   }
 }
 
@@ -162,7 +161,6 @@ export async function submitLeadForm(
 
     return { success: true };
   } catch (error) {
-    console.error(error);
-    return { error: "Something went wrong. Please try again." };
+    return createResendErrorMessage("lead form catch", getErrorMessage(error));
   }
 }
