@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check:no-resend-sdk": "node scripts/ensure-no-resend-sdk.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -54,17 +55,21 @@
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
-    "resend": "^6.9.4",
     "sonner": "^1.7.1",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@next/swc-linux-x64-gnu": "^16.1.6",
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.2.2",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^22",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
+    "lightningcss-linux-x64-gnu": "^1.32.0",
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
     "tw-animate-css": "1.3.3",
