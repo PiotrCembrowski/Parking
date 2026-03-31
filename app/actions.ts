@@ -48,7 +48,7 @@ export async function submitLeadForm(
     if (validationError) return { error: validationError };
 
     await resend.emails.send({
-      from: "Website Lead <onboarding@resend.dev>",
+      from: "Website Lead <leads@striping.site>",
       to: recipientEmail,
       replyTo: email,
       subject: "New Parking Lot Striping Lead",
