@@ -1,6 +1,6 @@
 "use server";
 
-import { Resend } from "resend";
+import { connect as connectTls, TLSSocket } from "node:tls";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const recipientEmail =
@@ -61,9 +61,9 @@ export async function submitQuoteRequest(
       return { error: "Please fill in all required fields." };
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return { error: "Please enter a valid email address." };
+    const { config, error } = getSmtpConfig();
+    if (!config) {
+      return createEmailError("quote smtp config", error ?? "Missing SMTP config.");
     }
 
     const { error } = await resend.emails.send({
@@ -73,17 +73,13 @@ export async function submitQuoteRequest(
       subject: "New Quote Request - Parking Lot Striping",
       html: `
         <h2>New Quote Request</h2>
-
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Company:</strong> ${company || "Not provided"}</p>
-
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
+        <p><strong>Company:</strong> ${escapeHtml(company || "Not provided")}</p>
         <hr />
-
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
-
+        <p>${escapeHtml(message)}</p>
         <hr />
         <p>This lead came from your website quote form.</p>
       `,
@@ -99,14 +95,9 @@ export async function submitQuoteRequest(
 
     return { success: true };
   } catch (error) {
-    console.error(error);
-    return { error: "Something went wrong. Please try again." };
+    return createEmailError("quote request", getErrorMessage(error));
   }
 }
-
-/* ============================= */
-/* Lead Form */
-/* ============================= */
 
 export async function submitLeadForm(
   _prevState: FormState | null,
@@ -128,9 +119,17 @@ export async function submitLeadForm(
       return { error: "Please fill in all required fields." };
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return { error: "Please enter a valid email address." };
+    const validationError = validateRequiredFields({
+      name,
+      business,
+      email,
+      service,
+    });
+    if (validationError) return { error: validationError };
+
+    const { config, error } = getSmtpConfig();
+    if (!config) {
+      return createEmailError("lead smtp config", error ?? "Missing SMTP config.");
     }
 
     const { error } = await resend.emails.send({
@@ -140,13 +139,11 @@ export async function submitLeadForm(
       subject: "New Parking Lot Striping Lead",
       html: `
         <h2>New Lead Received</h2>
-
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Business:</strong> ${business}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Service Needed:</strong> ${service}</p>
-
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Business:</strong> ${escapeHtml(business)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
+        <p><strong>Service Needed:</strong> ${escapeHtml(service)}</p>
         <hr />
         <p>This lead came from your website lead form.</p>
       `,
@@ -162,7 +159,6 @@ export async function submitLeadForm(
 
     return { success: true };
   } catch (error) {
-    console.error(error);
-    return { error: "Something went wrong. Please try again." };
+    return createEmailError("lead form", getErrorMessage(error));
   }
 }
