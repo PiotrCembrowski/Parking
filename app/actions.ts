@@ -2,23 +2,79 @@
 
 import { connect as connectTls, TLSSocket } from "node:tls";
 
-<<<<<<< HEAD
-const resend = new Resend(process.env.RESEND_API_KEY);
-const recipientEmail =
-  process.env.LEAD_RECIPIENT_EMAIL ?? "biuroc4agency@gmail.com";
-=======
 const defaultRecipientEmail = "biuroc4agency@gmail.com";
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
 
 interface FormState {
   success?: boolean;
   error?: string;
+};
+
+type LeadPayload = {
+  formType: "lead";
+  submittedAt: string;
+  recipientEmail: string;
+  name: string;
+  business: string;
+  email: string;
+  phone: string;
+  service: string;
+};
+
+type QuotePayload = {
+  formType: "quote";
+  submittedAt: string;
+  recipientEmail: string;
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+};
+
+function normalizeEmail(value: string | undefined, fallback: string): string {
+  if (!value) return fallback;
+
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .replace(/@gmal\.co+?m$/, "@gmail.com");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(normalized)) {
+    console.error(`Invalid email \"${value}\", falling back to ${fallback}.`);
+    return fallback;
+  }
+
+  return normalized;
 }
 
-<<<<<<< HEAD
-function normalizeRecipientEmail(value: string | undefined): string {
-  if (!value) return defaultRecipientEmail;
-=======
+function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) return error.message;
+
+  try {
+    return JSON.stringify(error);
+  } catch {
+    return "Unknown error";
+  }
+}
+
+function createFormError(context: string, message: string): FormState {
+  console.error(`Form delivery error (${context}): ${message}`);
+  return { error: `Message delivery failed: ${message}` };
+}
+
+function validateRequiredFields(values: Record<string, string>): string | null {
+  const hasEmpty = Object.values(values).some((value) => !value.trim());
+  if (hasEmpty) return "Please fill in all required fields.";
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (values.email && !emailRegex.test(values.email)) {
+    return "Please enter a valid email address.";
+  }
+
+  return null;
+}
+
 interface SendEmailParams {
   from: string;
   replyTo?: string;
@@ -37,7 +93,6 @@ interface SmtpConfig {
 
 function normalizeEmail(value: string | undefined, fallback: string): string {
   if (!value) return fallback;
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
 
   const normalized = value
     .trim()
@@ -46,32 +101,13 @@ function normalizeEmail(value: string | undefined, fallback: string): string {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(normalized)) {
-<<<<<<< HEAD
-    console.error(
-      `Invalid LEAD_RECIPIENT_EMAIL "${value}", falling back to ${defaultRecipientEmail}.`,
-    );
-    return defaultRecipientEmail;
-=======
     console.error(`Invalid email \"${value}\", falling back to ${fallback}.`);
     return fallback;
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
   }
 
   return normalized;
 }
 
-<<<<<<< HEAD
-function createResendErrorMessage(context: string, message: string) {
-  console.error(`Resend error (${context}): ${message}`);
-  return {
-    error: `Couldn't send your message: ${message}. Please verify RESEND_API_KEY, RESEND_FROM_EMAIL, and LEAD_RECIPIENT_EMAIL.`,
-  };
-}
-
-/* ============================= */
-/* Quote Request Form */
-/* ============================= */
-=======
 function escapeHtml(value: string): string {
   return value
     .replaceAll("&", "&amp;")
@@ -259,31 +295,17 @@ function validateRequiredFields(values: Record<string, string>): string | null {
 
   return null;
 }
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
 
 export async function submitQuoteRequest(
   _prevState: FormState | null,
   formData: FormData,
 ): Promise<FormState> {
   try {
-<<<<<<< HEAD
-    if (!process.env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY environment variable.");
-      return { error: "Email service is not configured. Please try again soon." };
-    }
-
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const company = formData.get("company") as string;
-    const message = formData.get("message") as string;
-=======
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
     const company = String(formData.get("company") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
 
     const validationError = validateRequiredFields({ name, email, message });
     if (validationError) return { error: validationError };
@@ -293,19 +315,8 @@ export async function submitQuoteRequest(
       return createEmailError("quote smtp config", error ?? "Missing SMTP config.");
     }
 
-<<<<<<< HEAD
-    const { config, error } = getSmtpConfig();
-    if (!config) {
-      return createEmailError("quote smtp config", error ?? "Missing SMTP config.");
-    }
-
-    const { error } = await resend.emails.send({
-      from: "Website Quote <onboarding@resend.dev>",
-      to: recipientEmail,
-=======
     await sendEmailUsingSmtp(config, {
       from: `Website <${config.fromEmail}>`,
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
       replyTo: email,
       subject: "New Quote Request - Parking Lot Striping",
       html: `
@@ -341,24 +352,11 @@ export async function submitLeadForm(
   formData: FormData,
 ): Promise<FormState> {
   try {
-<<<<<<< HEAD
-    if (!process.env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY environment variable.");
-      return { error: "Email service is not configured. Please try again soon." };
-    }
-
-    const name = formData.get("name") as string;
-    const business = formData.get("business") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const service = formData.get("service") as string;
-=======
     const name = String(formData.get("name") ?? "").trim();
     const business = String(formData.get("business") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
     const service = String(formData.get("service") ?? "").trim();
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
 
     const validationError = validateRequiredFields({
       name,
@@ -373,27 +371,8 @@ export async function submitLeadForm(
       return createEmailError("lead smtp config", error ?? "Missing SMTP config.");
     }
 
-<<<<<<< HEAD
-    const validationError = validateRequiredFields({
-      name,
-      business,
-      email,
-      service,
-    });
-    if (validationError) return { error: validationError };
-
-    const { config, error } = getSmtpConfig();
-    if (!config) {
-      return createEmailError("lead smtp config", error ?? "Missing SMTP config.");
-    }
-
-    const { error } = await resend.emails.send({
-      from: "Website Lead <onboarding@resend.dev>",
-      to: recipientEmail,
-=======
     await sendEmailUsingSmtp(config, {
       from: `Website <${config.fromEmail}>`,
->>>>>>> d4d1c3a (Remove all Resend package usage and switch forms to SMTP)
       replyTo: email,
       subject: "New Parking Lot Striping Lead",
       html: `
