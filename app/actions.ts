@@ -99,7 +99,7 @@ export async function submitQuoteRequest(
     if (validationError) return { error: validationError };
 
     await resend.emails.send({
-      from: "Website Contact <onboarding@resend.dev>",
+      from: "Website Contact <leads@striping.site",
       to: recipientEmail,
       replyTo: email,
       subject: "New Quote Request",
