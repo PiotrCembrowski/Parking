@@ -33,5 +33,13 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+
+    <!-- cities -->
+  <url>
+    <loc>https://www.striping.site/parking-lot-striping-tulsa</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
