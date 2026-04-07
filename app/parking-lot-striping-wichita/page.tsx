@@ -13,77 +13,79 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Parking Lot Striping in Tulsa | PrecisionLine Striping",
+  title:
+    "Parking Lot Striping Wichita KS | ADA, Fire Lane & Line Striping Services",
   description:
-    "Professional parking lot striping services in Tulsa, Oklahoma. ADA compliant markings, custom layouts, and competitive pricing. Get a free quote today.",
+    "Professional parking lot striping in Wichita, KS. ADA compliant markings, fire lanes, re-striping, and pavement markings. Fast turnaround and competitive Wichita pricing.",
 };
 
 const benefits = [
   {
     icon: Shield,
-    title: "ADA Compliant",
+    title: "ADA Compliant Striping",
     description:
-      "All markings meet federal ADA requirements and local Tulsa regulations.",
+      "All parking lot markings meet federal ADA guidelines and Wichita municipal requirements.",
   },
   {
     icon: Clock,
     title: "Fast Turnaround",
     description:
-      "Most Tulsa projects completed within 24-48 hours with minimal disruption.",
+      "Most Wichita striping projects completed within 24–48 hours with minimal disruption.",
   },
   {
     icon: CheckCircle,
-    title: "Premium Materials",
-    description: "Traffic-grade paints rated for Oklahoma weather conditions.",
+    title: "Premium Traffic Paint",
+    description:
+      "Durable, traffic-grade paint designed to withstand Kansas weather conditions.",
   },
   {
     icon: DollarSign,
-    title: "Competitive Pricing",
+    title: "Competitive Wichita Pricing",
     description:
-      "Transparent pricing with no hidden fees. Free estimates for all Tulsa properties.",
+      "Transparent pricing with free estimates for Wichita businesses and property owners.",
   },
 ];
 
 const pricingItems = [
   {
-    service: "Standard Line Striping",
-    price: "$0.15 - $0.25",
+    service: "Parking Lot Line Striping",
+    price: "$0.20 - $0.35",
     unit: "per linear foot",
     description: "White or yellow parking lines",
   },
   {
-    service: "Handicap Stall (ADA)",
-    price: "$150 - $250",
+    service: "ADA Handicap Stall",
+    price: "$175 - $325",
     unit: "per stall",
     description: "Includes symbol, border, and access aisle",
   },
   {
-    service: "Fire Lane Markings",
-    price: "$2.00 - $3.50",
+    service: "Fire Lane Striping",
+    price: "$2.50 - $4.50",
     unit: "per linear foot",
     description: "Red curb with stenciled lettering",
   },
   {
     service: "Directional Arrows",
-    price: "$25 - $50",
+    price: "$35 - $75",
     unit: "each",
-    description: "Standard or custom arrow designs",
+    description: "Traffic flow arrows",
   },
   {
-    service: "Number/Letter Stencils",
-    price: "$15 - $30",
+    service: "Parking Space Numbering",
+    price: "$20 - $40",
     unit: "each",
-    description: "Parking space numbering",
+    description: "Number or letter stencils",
   },
   {
-    service: "Full Lot Re-stripe",
-    price: "Custom Quote",
-    unit: "varies",
-    description: "Based on lot size and condition",
+    service: "Full Lot Re-Striping",
+    price: "$450 - $2,500+",
+    unit: "per lot",
+    description: "Based on size and condition",
   },
 ];
 
-export default function TulsaPage() {
+export default function WichitaPage() {
   return (
     <>
       {/* Hero Section */}
@@ -91,66 +93,93 @@ export default function TulsaPage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/hero-parking.jpg"
-            alt="Professional parking lot striping in Tulsa"
+            alt="Parking lot striping Wichita Kansas"
             fill
-            className="object-cover brightness-[0.3]"
+            className="object-cover brightness-[0.35]"
             priority
           />
         </div>
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 text-accent mb-4">
               <MapPin className="h-5 w-5" />
-              <span className="text-sm font-medium uppercase tracking-wide">
-                Serving Tulsa, OK
+              <span className="text-sm uppercase tracking-wide">
+                Wichita, Kansas
               </span>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl text-balance">
-              Parking Lot Striping in Tulsa
+
+            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+              Parking Lot Striping Wichita KS
             </h1>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              Professional parking lot striping and pavement marking services
-              for commercial properties throughout Tulsa and the surrounding
-              Oklahoma area. ADA compliant, fast turnaround, and competitive
-              pricing.
+
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              Professional parking lot striping services in Wichita, Kansas.
+              Improve safety, maximize parking capacity, and maintain ADA
+              compliance with durable, long-lasting pavement markings.
             </p>
+
+            <div className="mt-8 flex gap-4">
+              <Link
+                href="#quote"
+                className="bg-accent text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
+              >
+                Get Free Quote
+              </Link>
+
+              <a
+                href="tel:+15551234567"
+                className="border border-white/30 text-white px-6 py-3 rounded-md"
+              >
+                Call Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Description Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Tulsa{"'"}s Trusted Striping Experts
+              <h2 className="text-3xl font-bold">
+                Professional Parking Lot Striping in Wichita
               </h2>
-              <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  PrecisionLine Striping has been serving Tulsa businesses,
-                  property managers, and commercial real estate owners for over
-                  15 years. We understand the unique demands of Oklahoma
-                  {"'"}s climate and deliver striping solutions built to last.
-                </p>
-                <p>
-                  From retail shopping centers in Brookside to industrial parks
-                  near the Port of Catoosa, we{"'"}ve helped hundreds of Tulsa
-                  properties maintain safe, compliant, and professional-looking
-                  parking lots.
-                </p>
-                <p>
-                  Our services include new lot layouts, re-striping faded lines,
-                  ADA handicap markings, fire lanes, directional arrows, and
-                  custom stenciling. We work nights and weekends to minimize
-                  disruption to your business.
-                </p>
-              </div>
+
+              <p className="mt-4 text-muted-foreground">
+                We provide professional parking lot striping for commercial
+                properties throughout Wichita including retail centers, office
+                buildings, warehouses, and apartment complexes.
+              </p>
+
+              <p className="mt-4 text-muted-foreground">
+                Our Wichita striping services include new layouts, re-striping,
+                ADA handicap markings, fire lanes, directional arrows, and
+                custom stenciling.
+              </p>
+
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Retail Shopping Centers",
+                  "Office Buildings",
+                  "Apartment Complexes",
+                  "Industrial Facilities",
+                  "Churches & Schools",
+                  "Medical Centers",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <CheckCircle className="h-5 w-5 text-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/striping-work.jpg"
-                alt="Striping work in progress in Tulsa"
+                alt="Parking lot striping Wichita"
                 fill
                 className="object-cover"
               />
@@ -159,26 +188,15 @@ export default function TulsaPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 lg:py-28 bg-secondary">
+      {/* Benefits */}
+      <section className="py-20 bg-muted">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Why Tulsa Businesses Choose Us
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Quality workmanship, reliable service, and results that last
-              through Oklahoma seasons.
-            </p>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid lg:grid-cols-4 gap-8">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="bg-background p-6 rounded-xl">
-                <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="font-semibold text-lg">{benefit.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <benefit.icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="font-semibold">{benefit.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2">
                   {benefit.description}
                 </p>
               </div>
@@ -187,102 +205,70 @@ export default function TulsaPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      {/* Pricing */}
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Tulsa Striping Pricing Estimates
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Transparent pricing for common services. Final quotes based on lot
-              size, condition, and scope.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-3xl font-bold text-center">
+            Wichita Parking Lot Striping Prices
+          </h2>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pricingItems.map((item) => (
               <div
                 key={item.service}
-                className="border border-border rounded-xl p-6 hover:border-accent/50 transition-colors"
+                className="border rounded-xl p-6 hover:border-accent transition"
               >
                 <h3 className="font-semibold">{item.service}</h3>
-                <div className="mt-2 flex items-baseline gap-2">
+
+                <div className="mt-2">
                   <span className="text-2xl font-bold">{item.price}</span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-sm text-muted-foreground ml-2">
                     {item.unit}
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground">
+
+                <p className="text-sm text-muted-foreground mt-2">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-muted-foreground">
-            * Prices are estimates for Tulsa metro area. Volume discounts
-            available for large projects.
-          </p>
         </div>
       </section>
 
-      {/* CTA & Lead Form Section */}
-      <section id="quote" className="py-20 lg:py-28 bg-foreground">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="text-white">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Request a Free Parking Lot Striping Quote
-              </h2>
-              <p className="mt-4 text-white/70 leading-relaxed">
-                Get a customized quote for your Tulsa property. We{"'"}ll assess
-                your lot, discuss your needs, and provide a detailed estimate
-                within 24 hours.
-              </p>
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/60">Call us directly</p>
-                    <a
-                      href="tel:+15551234567"
-                      className="font-semibold hover:text-accent transition-colors"
-                    >
-                      (555) 123-4567
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/60">Email us</p>
-                    <a
-                      href="mailto:tulsa@precisionline.com"
-                      className="font-semibold hover:text-accent transition-colors"
-                    >
-                      tulsa@precisionline.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/60">Service area</p>
-                    <p className="font-semibold">
-                      Tulsa, Broken Arrow, Owasso, Jenks, Bixby
-                    </p>
-                  </div>
-                </div>
+      {/* CTA */}
+      <section id="quote" className="py-20 bg-foreground text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-3xl font-bold">
+              Get a Free Wichita Striping Quote
+            </h2>
+
+            <p className="mt-4 text-white/70">
+              Fast estimates for Wichita businesses. Most projects completed
+              within 24-48 hours.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <div className="flex gap-3">
+                <Phone className="text-accent" />
+                <a href="tel:+15551234567">(555) 123-4567</a>
+              </div>
+
+              <div className="flex gap-3">
+                <Mail className="text-accent" />
+                <span>wichita@precisionline.com</span>
+              </div>
+
+              <div className="flex gap-3">
+                <MapPin className="text-accent" />
+                <span>Wichita • Derby • Andover • Maize • Haysville</span>
               </div>
             </div>
-            <div className="bg-background rounded-2xl p-8">
-              <ContactForm />
-            </div>
+          </div>
+
+          <div className="bg-background text-black rounded-xl p-8">
+            <ContactForm />
           </div>
         </div>
       </section>

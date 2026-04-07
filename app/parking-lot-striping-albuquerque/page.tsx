@@ -13,10 +13,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Parking Lot Striping Boise ID | ADA, Fire Lane & Line Striping Services",
+  title: "Parking Lot Striping Albuquerque NM | ADA, Fire Lane & Line Striping",
   description:
-    "Professional parking lot striping in Boise, ID. ADA compliant markings, fire lanes, re-striping, and pavement markings. Fast turnaround and competitive Boise pricing.",
+    "Professional parking lot striping in Albuquerque, NM. ADA compliant markings, fire lanes, re-striping, and pavement markings. Fast turnaround and competitive Albuquerque pricing.",
 };
 
 const benefits = [
@@ -24,25 +23,25 @@ const benefits = [
     icon: Shield,
     title: "ADA Compliant Striping",
     description:
-      "All parking lot markings meet federal ADA guidelines and Boise municipal requirements.",
+      "All parking lot markings meet federal ADA guidelines and Albuquerque municipal requirements.",
   },
   {
     icon: Clock,
     title: "Fast Turnaround",
     description:
-      "Most Boise striping projects completed within 24–48 hours with minimal disruption.",
+      "Most Albuquerque striping projects completed within 24–48 hours with minimal disruption.",
   },
   {
     icon: CheckCircle,
     title: "Premium Traffic Paint",
     description:
-      "Durable, traffic-grade paint designed to withstand Idaho weather and seasonal conditions.",
+      "Durable, traffic-grade paint built to withstand New Mexico sun, heat, and weather conditions.",
   },
   {
     icon: DollarSign,
-    title: "Competitive Boise Pricing",
+    title: "Competitive Albuquerque Pricing",
     description:
-      "Transparent pricing with free estimates for Boise businesses and property owners.",
+      "Transparent pricing with free estimates for Albuquerque businesses and property owners.",
   },
 ];
 
@@ -85,7 +84,7 @@ const pricingItems = [
   },
 ];
 
-export default function BoisePage() {
+export default function AlbuquerquePage() {
   return (
     <>
       {/* Hero Section */}
@@ -93,7 +92,7 @@ export default function BoisePage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/hero-parking.jpg"
-            alt="Parking lot striping Boise Idaho"
+            alt="Parking lot striping Albuquerque New Mexico"
             fill
             className="object-cover brightness-[0.35]"
             priority
@@ -105,18 +104,18 @@ export default function BoisePage() {
             <div className="flex items-center gap-2 text-accent mb-4">
               <MapPin className="h-5 w-5" />
               <span className="text-sm uppercase tracking-wide">
-                Boise, Idaho
+                Albuquerque, New Mexico
               </span>
             </div>
 
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Parking Lot Striping Boise ID
+              Parking Lot Striping Albuquerque NM
             </h1>
 
             <p className="mt-6 text-lg text-white/80 leading-relaxed">
-              Professional parking lot striping services in Boise, Idaho.
-              Improve safety, maximize parking capacity, and maintain ADA
-              compliance with durable, long-lasting pavement markings.
+              Professional parking lot striping services in Albuquerque, New
+              Mexico. Improve safety, maximize parking capacity, and maintain
+              ADA compliance with durable, long-lasting pavement markings.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -144,19 +143,19 @@ export default function BoisePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold">
-                Professional Parking Lot Striping in Boise
+                Professional Parking Lot Striping in Albuquerque
               </h2>
 
               <p className="mt-4 text-muted-foreground">
                 We provide professional parking lot striping for commercial
-                properties throughout Boise including retail centers, office
-                buildings, warehouses, and apartment complexes.
+                properties throughout Albuquerque including retail centers,
+                office buildings, warehouses, and apartment complexes.
               </p>
 
               <p className="mt-4 text-muted-foreground">
-                Our Boise striping services include new layouts, re-striping,
-                ADA handicap markings, fire lanes, directional arrows, and
-                custom stenciling.
+                Our Albuquerque striping services include new layouts,
+                re-striping, ADA handicap markings, fire lanes, directional
+                arrows, and custom stenciling.
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -179,7 +178,7 @@ export default function BoisePage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/striping-work.jpg"
-                alt="Parking lot striping Boise"
+                alt="Parking lot striping Albuquerque"
                 fill
                 className="object-cover"
               />
@@ -209,7 +208,7 @@ export default function BoisePage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center">
-            Boise Parking Lot Striping Prices
+            Albuquerque Parking Lot Striping Prices
           </h2>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -241,11 +240,11 @@ export default function BoisePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl font-bold">
-              Get a Free Boise Striping Quote
+              Get a Free Albuquerque Striping Quote
             </h2>
 
             <p className="mt-4 text-white/70">
-              Fast estimates for Boise businesses. Most projects completed
+              Fast estimates for Albuquerque businesses. Most projects completed
               within 24-48 hours.
             </p>
 
@@ -257,12 +256,14 @@ export default function BoisePage() {
 
               <div className="flex gap-3">
                 <Mail className="text-accent" />
-                <span>boise@precisionline.com</span>
+                <span>albuquerque@precisionline.com</span>
               </div>
 
               <div className="flex gap-3">
                 <MapPin className="text-accent" />
-                <span>Boise • Meridian • Nampa • Caldwell • Eagle</span>
+                <span>
+                  Albuquerque • Rio Rancho • Bernalillo • Los Lunas • Corrales
+                </span>
               </div>
             </div>
           </div>
