@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { LocalBusinessSchema } from "@/components/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://precisionlinestriping.com"),
@@ -103,6 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <LocalBusinessSchema />
         <Header />
         <main>{children}</main>
         <Footer />
