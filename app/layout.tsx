@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { LocalBusinessSchema } from "@/components/schema";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://precisionlinestriping.com"),
+  metadataBase: new URL("https://www.striping.site/"),
 
   title: {
     default: "Parking Lot Striping Services | PrecisionLine Striping",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://precisionlinestriping.com",
+    url: "https://www.striping.site/",
     siteName: "PrecisionLine Striping",
     title:
       "Professional Parking Lot Striping Services | PrecisionLine Striping",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://precisionlinestriping.com",
+    canonical: "https://www.striping.site/",
   },
 
   category: "business",

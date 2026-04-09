@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://precisionlinestriping.com/sitemap.xml",
+    sitemap: "https://www.striping.site//sitemap.xml",
   };
 }

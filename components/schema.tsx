@@ -5,7 +5,7 @@ export function LocalBusinessSchema() {
     name: "PrecisionLine Striping",
     description:
       "Professional parking lot striping, ADA compliant markings, and pavement solutions for commercial properties.",
-    url: "https://precisionlinestriping.com",
+    url: "https://www.striping.site/",
     telephone: "+1-555-123-4567",
     areaServed: ["Tulsa", "Albuquerque", "Omaha", "Boise", "Wichita"],
     serviceType: [
