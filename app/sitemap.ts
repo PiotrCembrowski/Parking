@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://precisionlinestriping.com";
+  const baseUrl = "https://striping.site";
 
   const cities = ["tulsa", "albuquerque", "omaha", "boise", "wichita"];
 
