@@ -174,6 +174,28 @@ export default function TulsaPage() {
                   </li>
                 ))}
               </ul>
+
+              {/* Internal Links */}
+              <div className="mt-8 space-y-2 text-sm">
+                <p>
+                  Learn more about our{" "}
+                  <Link
+                    href="/services/parking-lot-striping"
+                    className="text-accent hover:underline"
+                  >
+                    parking lot striping services
+                  </Link>{" "}
+                  available throughout Tulsa.
+                </p>
+
+                <p>
+                  Need a fast estimate?{" "}
+                  <Link href="/contact" className="text-accent hover:underline">
+                    Contact our Tulsa striping team
+                  </Link>{" "}
+                  today.
+                </p>
+              </div>
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
@@ -233,6 +255,58 @@ export default function TulsaPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center text-sm">
+            <Link href="/services" className="text-accent hover:underline">
+              View all parking lot striping services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearby Cities */}
+      <section className="py-16 bg-muted">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-center">
+            Parking Lot Striping Near Tulsa
+          </h2>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+            <Link
+              href="/locations/oklahoma-city"
+              className="text-accent hover:underline"
+            >
+              Oklahoma City
+            </Link>
+
+            <Link
+              href="/locations/broken-arrow"
+              className="text-accent hover:underline"
+            >
+              Broken Arrow
+            </Link>
+
+            <Link
+              href="/locations/owasso"
+              className="text-accent hover:underline"
+            >
+              Owasso
+            </Link>
+
+            <Link
+              href="/locations/jenks"
+              className="text-accent hover:underline"
+            >
+              Jenks
+            </Link>
+
+            <Link
+              href="/locations/bixby"
+              className="text-accent hover:underline"
+            >
+              Bixby
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -264,6 +338,13 @@ export default function TulsaPage() {
                 <MapPin className="text-accent" />
                 <span>Tulsa • Broken Arrow • Owasso • Jenks • Bixby</span>
               </div>
+
+              <Link
+                href="/contact"
+                className="inline-block mt-4 text-accent underline"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
 

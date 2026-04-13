@@ -14,9 +14,9 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Parking Lot Striping Tampa FL | ADA, Fire Lane & Line Striping Services",
+    "Parking Lot Striping Wichita KS | ADA, Fire Lane & Line Striping Services",
   description:
-    "Professional parking lot striping in Tampa, Florida. ADA compliant markings, fire lanes, warehouse striping, and re-striping. Fast turnaround and competitive Tampa pricing.",
+    "Professional parking lot striping in Wichita, KS. ADA compliant markings, fire lanes, re-striping, and pavement markings. Fast turnaround and competitive Wichita pricing.",
 };
 
 const benefits = [
@@ -24,25 +24,25 @@ const benefits = [
     icon: Shield,
     title: "ADA Compliant Striping",
     description:
-      "All parking lot striping meets federal ADA guidelines and Tampa municipal requirements.",
+      "All parking lot markings meet federal ADA guidelines and Wichita municipal requirements.",
   },
   {
     icon: Clock,
     title: "Fast Turnaround",
     description:
-      "Most Tampa striping projects completed within 24–48 hours with minimal business disruption.",
+      "Most Wichita striping projects completed within 24–48 hours with minimal disruption.",
   },
   {
     icon: CheckCircle,
     title: "Premium Traffic Paint",
     description:
-      "Durable, high-visibility paint designed for Florida heat, rain, and heavy traffic.",
+      "Durable, traffic-grade paint designed to withstand Kansas weather conditions.",
   },
   {
     icon: DollarSign,
-    title: "Competitive Tampa Pricing",
+    title: "Competitive Wichita Pricing",
     description:
-      "Transparent pricing with free estimates for Tampa businesses and property managers.",
+      "Transparent pricing with free estimates for Wichita businesses and property owners.",
   },
 ];
 
@@ -85,7 +85,7 @@ const pricingItems = [
   },
 ];
 
-export default function TampaPage() {
+export default function WichitaPage() {
   return (
     <>
       {/* Hero Section */}
@@ -93,7 +93,7 @@ export default function TampaPage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/hero-parking.jpg"
-            alt="Parking lot striping Tampa Florida"
+            alt="Parking lot striping Wichita Kansas"
             fill
             className="object-cover brightness-[0.35]"
             priority
@@ -105,18 +105,18 @@ export default function TampaPage() {
             <div className="flex items-center gap-2 text-accent mb-4">
               <MapPin className="h-5 w-5" />
               <span className="text-sm uppercase tracking-wide">
-                Tampa, Florida
+                Wichita, Kansas
               </span>
             </div>
 
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Parking Lot Striping Tampa FL
+              Parking Lot Striping Wichita KS
             </h1>
 
             <p className="mt-6 text-lg text-white/80 leading-relaxed">
-              Professional parking lot striping services in Tampa, Florida.
+              Professional parking lot striping services in Wichita, Kansas.
               Improve safety, maximize parking capacity, and maintain ADA
-              compliance with durable, high-visibility pavement markings.
+              compliance with durable, long-lasting pavement markings.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -128,7 +128,7 @@ export default function TampaPage() {
               </Link>
 
               <a
-                href="tel:+18135551234"
+                href="tel:+15551234567"
                 className="border border-white/30 text-white px-6 py-3 rounded-md"
               >
                 Call Now
@@ -144,19 +144,19 @@ export default function TampaPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold">
-                Professional Parking Lot Striping in Tampa
+                Professional Parking Lot Striping in Wichita
               </h2>
 
               <p className="mt-4 text-muted-foreground">
-                We provide professional parking lot striping services throughout
-                Tampa for retail centers, office buildings, apartment complexes,
-                warehouses, and commercial properties.
+                We provide professional parking lot striping for commercial
+                properties throughout Wichita including retail centers, office
+                buildings, warehouses, and apartment complexes.
               </p>
 
               <p className="mt-4 text-muted-foreground">
-                Our Tampa striping services include new layouts, re-striping,
+                Our Wichita striping services include new layouts, re-striping,
                 ADA handicap markings, fire lanes, directional arrows, and
-                custom pavement markings.
+                custom stenciling.
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -174,12 +174,34 @@ export default function TampaPage() {
                   </li>
                 ))}
               </ul>
+
+              {/* Internal Links */}
+              <div className="mt-8 space-y-2 text-sm">
+                <p>
+                  Learn more about our{" "}
+                  <Link
+                    href="/services/parking-lot-striping"
+                    className="text-accent hover:underline"
+                  >
+                    parking lot striping services
+                  </Link>{" "}
+                  available throughout Wichita.
+                </p>
+
+                <p>
+                  Need a fast estimate?{" "}
+                  <Link href="/contact" className="text-accent hover:underline">
+                    Contact our Wichita striping team
+                  </Link>{" "}
+                  today.
+                </p>
+              </div>
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/striping-work.jpg"
-                alt="Parking lot striping Tampa Florida"
+                alt="Parking lot striping Wichita"
                 fill
                 className="object-cover"
               />
@@ -209,7 +231,7 @@ export default function TampaPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center">
-            Tampa Parking Lot Striping Prices
+            Wichita Parking Lot Striping Prices
           </h2>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -233,6 +255,12 @@ export default function TampaPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center text-sm">
+            <Link href="/services" className="text-accent hover:underline">
+              View all parking lot striping services
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -241,32 +269,36 @@ export default function TampaPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl font-bold">
-              Get a Free Tampa Striping Quote
+              Get a Free Wichita Striping Quote
             </h2>
 
             <p className="mt-4 text-white/70">
-              Fast estimates for Tampa businesses. Most projects completed
+              Fast estimates for Wichita businesses. Most projects completed
               within 24-48 hours.
             </p>
 
             <div className="mt-8 space-y-4">
               <div className="flex gap-3">
                 <Phone className="text-accent" />
-                <a href="tel:+18135551234">(813) 555-1234</a>
+                <a href="tel:+15551234567">(555) 123-4567</a>
               </div>
 
               <div className="flex gap-3">
                 <Mail className="text-accent" />
-                <span>tampa@precisionline.com</span>
+                <span>wichita@precisionline.com</span>
               </div>
 
               <div className="flex gap-3">
                 <MapPin className="text-accent" />
-                <span>
-                  Tampa • Brandon • Riverview • Clearwater • St. Petersburg •
-                  Wesley Chapel
-                </span>
+                <span>Wichita, Kansas</span>
               </div>
+
+              <Link
+                href="/contact"
+                className="inline-block mt-4 text-accent underline"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
 
