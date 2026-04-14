@@ -1,19 +1,62 @@
 "use client"
 
-import { useActionState } from "react"
+import { FormEvent, useState } from "react"
+import { CheckCircle, Send } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Spinner } from "@/components/ui/spinner"
 import { Textarea } from "@/components/ui/textarea"
-import { Send, CheckCircle } from "lucide-react"
-import { submitQuoteRequest } from "@/app/actions"
+
+type SubmitState = "idle" | "success" | "error"
 
 export function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitQuoteRequest, null)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitState, setSubmitState] = useState<SubmitState>("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
-  if (state?.success) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setSubmitState("idle")
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgorvvga", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error("We couldn't send your message right now. Please try again.")
+      }
+
+      setSubmitState("success")
+      setName("")
+      setEmail("")
+      setMessage("")
+    } catch {
+      setSubmitState("error")
+      setErrorMessage("We couldn't send your message right now. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  if (submitState === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
-        <CheckCircle className="h-12 w-12 text-green-600 mb-4" />
+        <CheckCircle className="mb-4 h-12 w-12 text-green-600" />
         <h3 className="text-xl font-semibold">Thank you!</h3>
         <p className="mt-2 text-muted-foreground">
           {"We've received your message and will be in touch within 24 hours."}
@@ -23,7 +66,7 @@ export function ContactForm() {
   }
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium">
@@ -34,8 +77,12 @@ export function ContactForm() {
             name="name"
             required
             placeholder="Your name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            disabled={isSubmitting}
           />
         </div>
+
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
             Email *
@@ -46,37 +93,16 @@ export function ContactForm() {
             type="email"
             required
             placeholder="you@company.com"
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">
-            Phone
-          </label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="(555) 000-0000"
-          />
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="company" className="text-sm font-medium">
-            Company
-          </label>
-          <Input
-            id="company"
-            name="company"
-            placeholder="Company name"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            disabled={isSubmitting}
           />
         </div>
       </div>
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Project Details *
+          Message *
         </label>
         <Textarea
           id="message"
@@ -84,16 +110,26 @@ export function ContactForm() {
           required
           rows={4}
           placeholder="Tell us about your project - lot size, current condition, timeline, etc."
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          disabled={isSubmitting}
         />
       </div>
 
-      {state?.error && (
-        <p className="text-sm text-red-600">{state.error}</p>
-      )}
+      {submitState === "error" ? <p className="text-sm text-red-600">{errorMessage}</p> : null}
 
-      <Button type="submit" className="w-full" size="lg" disabled={isPending}>
-        {isPending ? "Sending..." : "Send Message"}
-        <Send className="ml-2 h-4 w-4" />
+      <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? (
+          <>
+            <Spinner className="mr-2" />
+            Sending...
+          </>
+        ) : (
+          <>
+            Send Message
+            <Send className="ml-2 h-4 w-4" />
+          </>
+        )}
       </Button>
     </form>
   )
