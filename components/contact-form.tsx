@@ -12,10 +12,7 @@ type SubmitState = "idle" | "success" | "error"
 
 export function ContactForm() {
   const [name, setName] = useState("")
-  const [business, setBusiness] = useState("")
   const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [service, setService] = useState("")
   const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitState, setSubmitState] = useState<SubmitState>("idle")
@@ -35,10 +32,7 @@ export function ContactForm() {
         },
         body: JSON.stringify({
           name,
-          business,
           email,
-          phone,
-          service,
           message,
         }),
       })
@@ -49,10 +43,7 @@ export function ContactForm() {
 
       setSubmitState("success")
       setName("")
-      setBusiness("")
       setEmail("")
-      setPhone("")
-      setService("")
       setMessage("")
     } catch {
       setSubmitState("error")
@@ -93,23 +84,6 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="business" className="text-sm font-medium">
-            Business Name *
-          </label>
-          <Input
-            id="business"
-            name="business"
-            required
-            placeholder="Your business"
-            value={business}
-            onChange={(event) => setBusiness(event.target.value)}
-            disabled={isSubmitting}
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
             Email *
           </label>
@@ -121,21 +95,6 @@ export function ContactForm() {
             placeholder="you@company.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            disabled={isSubmitting}
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">
-            Phone <span className="text-muted-foreground">(optional)</span>
-          </label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="(555) 000-0000"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
             disabled={isSubmitting}
           />
         </div>
@@ -166,7 +125,7 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Message <span className="text-muted-foreground">(optional)</span>
+          Message *
         </label>
         <Textarea
           id="message"
