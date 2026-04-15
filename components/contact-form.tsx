@@ -10,33 +10,13 @@ import { Textarea } from "@/components/ui/textarea"
 
 type SubmitState = "idle" | "success" | "error"
 
-type ContactFormValues = {
-  name: string
-  business: string
-  email: string
-  phone: string
-  service: string
-  message: string
-}
-
-const initialFormValues: ContactFormValues = {
-  name: "",
-  business: "",
-  email: "",
-  phone: "",
-  service: "",
-  message: "",
-}
-
 export function ContactForm() {
-  const [formValues, setFormValues] = useState<ContactFormValues>(initialFormValues)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitState, setSubmitState] = useState<SubmitState>("idle")
   const [errorMessage, setErrorMessage] = useState("")
-
-  function setFieldValue<K extends keyof ContactFormValues>(field: K, value: ContactFormValues[K]) {
-    setFormValues((previous) => ({ ...previous, [field]: value }))
-  }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -50,7 +30,11 @@ export function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
       })
 
       if (!response.ok) {
@@ -58,7 +42,9 @@ export function ContactForm() {
       }
 
       setSubmitState("success")
-      setFormValues(initialFormValues)
+      setName("")
+      setEmail("")
+      setMessage("")
     } catch {
       setSubmitState("error")
       setErrorMessage("We couldn't send your message right now. Please try again.")
@@ -91,29 +77,12 @@ export function ContactForm() {
             name="name"
             required
             placeholder="Your name"
-            value={formValues.name}
-            onChange={(event) => setFieldValue("name", event.target.value)}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
             disabled={isSubmitting}
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="business" className="text-sm font-medium">
-            Business Name *
-          </label>
-          <Input
-            id="business"
-            name="business"
-            required
-            placeholder="Your business"
-            value={formValues.business}
-            onChange={(event) => setFieldValue("business", event.target.value)}
-            disabled={isSubmitting}
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
             Email *
@@ -124,26 +93,56 @@ export function ContactForm() {
             type="email"
             required
             placeholder="you@company.com"
-            value={formValues.email}
-            onChange={(event) => setFieldValue("email", event.target.value)}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             disabled={isSubmitting}
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">
-            Phone <span className="text-muted-foreground">(optional)</span>
-          </label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="(555) 000-0000"
-            value={formValues.phone}
-            onChange={(event) => setFieldValue("phone", event.target.value)}
-            disabled={isSubmitting}
-          />
-        </div>
+      <div className="space-y-2">
+        <label htmlFor="service" className="text-sm font-medium">
+          Service Needed *
+        </label>
+        <select
+          id="service"
+          name="service"
+          required
+          value={serviceNeeded}
+          onChange={(event) => setServiceNeeded(event.target.value)}
+          disabled={isSubmitting}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select a service</option>
+          <option value="striping">Line Striping</option>
+          <option value="restriping">Re-striping / Refresh</option>
+          <option value="ada">ADA / Handicap Markings</option>
+          <option value="layout">New Lot Layout</option>
+          <option value="stenciling">Stenciling / Numbering</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="service" className="text-sm font-medium">
+          Service Needed *
+        </label>
+        <select
+          id="service"
+          name="service"
+          required
+          value={formValues.service}
+          onChange={(event) => setFieldValue("service", event.target.value)}
+          disabled={isSubmitting}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select a service</option>
+          <option value="striping">Line Striping</option>
+          <option value="restriping">Re-striping / Refresh</option>
+          <option value="ada">ADA / Handicap Markings</option>
+          <option value="layout">New Lot Layout</option>
+          <option value="stenciling">Stenciling / Numbering</option>
+          <option value="other">Other</option>
+        </select>
       </div>
 
       <div className="space-y-2">
@@ -171,15 +170,15 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Message <span className="text-muted-foreground">(optional)</span>
+          Message *
         </label>
         <Textarea
           id="message"
           name="message"
           rows={4}
           placeholder="Tell us about your project - lot size, current condition, timeline, etc."
-          value={formValues.message}
-          onChange={(event) => setFieldValue("message", event.target.value)}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           disabled={isSubmitting}
         />
       </div>
