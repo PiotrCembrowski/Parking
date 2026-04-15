@@ -1,14 +1,26 @@
-"use client"
+"use client";
 
-import { useActionState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Send, CheckCircle } from "lucide-react"
-import { submitQuoteRequest } from "@/app/actions"
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Send, CheckCircle } from "lucide-react";
+import { submitQuoteRequest } from "@/app/actions";
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" className="w-full" size="lg" disabled={pending}>
+      {pending ? "Sending..." : "Send Message"}
+      <Send className="ml-2 h-4 w-4" />
+    </Button>
+  );
+}
 
 export function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitQuoteRequest, null)
+  const [state, formAction] = useActionState(submitQuoteRequest, null);
 
   if (state?.success) {
     return (
@@ -19,7 +31,7 @@ export function ContactForm() {
           {"We've received your message and will be in touch within 24 hours."}
         </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -29,13 +41,9 @@ export function ContactForm() {
           <label htmlFor="name" className="text-sm font-medium">
             Name *
           </label>
-          <Input
-            id="name"
-            name="name"
-            required
-            placeholder="Your name"
-          />
+          <Input id="name" name="name" required placeholder="Your name" />
         </div>
+
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
             Email *
@@ -62,15 +70,12 @@ export function ContactForm() {
             placeholder="(555) 000-0000"
           />
         </div>
+
         <div className="space-y-2">
           <label htmlFor="company" className="text-sm font-medium">
             Company
           </label>
-          <Input
-            id="company"
-            name="company"
-            placeholder="Company name"
-          />
+          <Input id="company" name="company" placeholder="Company name" />
         </div>
       </div>
 
@@ -87,14 +92,9 @@ export function ContactForm() {
         />
       </div>
 
-      {state?.error && (
-        <p className="text-sm text-red-600">{state.error}</p>
-      )}
+      {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
 
-      <Button type="submit" className="w-full" size="lg" disabled={isPending}>
-        {isPending ? "Sending..." : "Send Message"}
-        <Send className="ml-2 h-4 w-4" />
-      </Button>
+      <SubmitButton />
     </form>
-  )
+  );
 }
