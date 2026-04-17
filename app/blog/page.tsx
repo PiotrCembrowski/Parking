@@ -55,15 +55,15 @@ const posts = [
     category: "Maintenance",
     image: "/images/hero-parking.jpg",
   },
-  // {
-  //   slug: "thermoplastic-vs-paint-striping",
-  //   title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
-  //   excerpt:
-  //     "Compare durability, cost, and application methods to choose the best striping material for your parking lot.",
-  //   date: "February 5, 2026",
-  //   category: "Materials",
-  //   image: "/images/ada-marking.jpg",
-  // },
+  {
+    slug: "thermoplastic-vs-paint-striping",
+    title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
+    excerpt:
+      "Compare durability, cost, and application methods to choose the best striping material for your parking lot.",
+    date: "February 5, 2026",
+    category: "Materials",
+    image: "/images/ada-marking.jpg",
+  },
 ];
 
 export default function BlogPage() {
