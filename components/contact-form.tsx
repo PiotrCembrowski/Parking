@@ -180,6 +180,29 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
+        <label htmlFor="service" className="text-sm font-medium">
+          Service Needed *
+        </label>
+        <select
+          id="service"
+          name="service"
+          required
+          value={formValues.service}
+          onChange={(event) => setFieldValue("service", event.target.value)}
+          disabled={isSubmitting}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select a service</option>
+          <option value="striping">Line Striping</option>
+          <option value="restriping">Re-striping / Refresh</option>
+          <option value="ada">ADA / Handicap Markings</option>
+          <option value="layout">New Lot Layout</option>
+          <option value="stenciling">Stenciling / Numbering</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
           Message *
         </label>
