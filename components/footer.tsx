@@ -2,18 +2,18 @@ import Link from "next/link";
 
 const navigation = {
   services: [
-    { name: "Parking Lot Striping", href: "/services/parking-lot-striping" },
-    { name: "ADA Compliance Striping", href: "/services/ada-striping" },
-    { name: "Fire Lane Striping", href: "/services/fire-lane-striping" },
-    { name: "Warehouse Striping", href: "/services/warehouse-striping" },
-    { name: "Parking Lot Re-Striping", href: "/services/restriping" },
+    { name: "Parking Lot Striping", href: "/services" },
+    { name: "ADA Compliance Striping", href: "/services" },
+    { name: "Fire Lane Striping", href: "/services" },
+    { name: "Warehouse Striping", href: "/services" },
+    { name: "Parking Lot Re-Striping", href: "/services" },
   ],
   locations: [
-    { name: "Tampa Striping", href: "/parking-lot-striping/tampa" },
-    { name: "Orlando Striping", href: "/parking-lot-striping/orlando" },
-    { name: "Dallas Striping", href: "/parking-lot-striping/dallas" },
-    { name: "Phoenix Striping", href: "/parking-lot-striping/phoenix" },
-    { name: "Tulsa Striping", href: "/parking-lot-striping/tulsa" },
+    { name: "Tampa Striping", href: "/parking-lot-striping-tampa" },
+    { name: "Orlando Striping", href: "/parking-lot-striping-orlando" },
+    { name: "Dallas Striping", href: "/parking-lot-striping-dallas" },
+    { name: "Phoenix Striping", href: "/parking-lot-striping-phoenix" },
+    { name: "Tulsa Striping", href: "/parking-lot-striping-tulsa" },
   ],
   company: [
     { name: "About", href: "/about" },
