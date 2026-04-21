@@ -16,6 +16,7 @@ const navLinks = [
   { href: "parking-lot-striping-boise", label: "Boise" },
   { href: "parking-lot-striping-omaha", label: "Omaha" },
   { href: "parking-lot-striping-tampa", label: "Tampa" },
+  { href: "parking-lot-striping-albuquerque", label: "Albuquerque" },
   // { href: "testimonials", label: "Testimonials" },
   { href: "contact", label: "Contact" },
 ];

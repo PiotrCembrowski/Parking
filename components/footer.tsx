@@ -10,10 +10,11 @@ const navigation = {
   ],
   locations: [
     { name: "Tampa Striping", href: "/parking-lot-striping-tampa" },
-    { name: "Orlando Striping", href: "/parking-lot-striping-orlando" },
-    { name: "Dallas Striping", href: "/parking-lot-striping-dallas" },
-    { name: "Phoenix Striping", href: "/parking-lot-striping-phoenix" },
+    { name: "Boise Striping", href: "/parking-lot-striping-boise" },
+    { name: "Omaha Striping", href: "/parking-lot-striping-omaha" },
+    { name: "Wichita Striping", href: "/parking-lot-striping-wichita" },
     { name: "Tulsa Striping", href: "/parking-lot-striping-tulsa" },
+    { name: "Albuquerque Striping", href: "/parking-lot-striping-albuquerque" },
   ],
   company: [
     { name: "About", href: "/about" },
