@@ -6,9 +6,9 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 /* -----------------------------
@@ -512,7 +512,8 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const post = posts[params.slug as keyof typeof posts];
+  const { slug } = await params;
+  const post = posts[slug as keyof typeof posts];
 
   if (!post) {
     return {
@@ -549,8 +550,9 @@ export async function generateMetadata({
    Page Component
 ------------------------------*/
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = posts[params.slug as keyof typeof posts];
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = posts[slug as keyof typeof posts];
 
   if (!post) {
     notFound();
@@ -559,7 +561,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const contentSections = post.content.split("##");
 
   const relatedPosts = Object.entries(posts)
-    .filter(([slug]) => slug !== params.slug)
+    .filter(([postSlug]) => postSlug !== slug)
     .slice(0, 3);
 
   return (
