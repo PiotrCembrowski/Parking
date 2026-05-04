@@ -280,7 +280,7 @@ export default function BoisePage() {
             <div className="mt-8 space-y-4">
               <div className="flex gap-3">
                 <Phone className="text-accent" />
-                <a href="tel:+15551234567">(555) 123-4567</a>
+                <a href="tel:+15551234567" className="hidden">(555) 123-4567</a>
               </div>
 
               <div className="flex gap-3">

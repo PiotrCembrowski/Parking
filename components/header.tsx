@@ -50,7 +50,7 @@ export function Header() {
         <div className="hidden lg:flex lg:items-center lg:gap-4">
           <a
             href="tel:+15551234567"
-            className="flex items-center gap-2 text-sm font-medium"
+            className="hidden flex items-center gap-2 text-sm font-medium"
           >
             <Phone className="h-4 w-4" />
             (555) 123-4567
@@ -81,7 +81,7 @@ export function Header() {
               ))}
               <a
                 href="tel:+15551234567"
-                className="flex items-center gap-2 font-medium py-2"
+                className="hidden flex items-center gap-2 font-medium py-2"
               >
                 <Phone className="h-4 w-4" />
                 (555) 123-4567
