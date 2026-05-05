@@ -39,7 +39,7 @@ export function Contact() {
                   </p>
                   <a
                     href="tel:+15551234567"
-                    className="font-semibold hover:underline"
+                    className="hidden font-semibold hover:underline"
                   >
                     (555) 123-4567
                   </a>
