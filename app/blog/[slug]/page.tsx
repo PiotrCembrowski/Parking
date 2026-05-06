@@ -132,6 +132,134 @@ New striping improves:
 `,
   },
 
+
+
+  "how-often-repaint-parking-lot-lines": {
+    title: "How Often Should Parking Lot Lines Be Repainted?",
+    excerpt:
+      "Parking lot striping fades over time. Learn typical repainting intervals and warning signs that it is time to restripe.",
+    image: "/images/striping-work.jpg",
+    date: "March 8, 2026",
+    readTime: "6 min read",
+    content: `
+Knowing when to repaint parking lot lines helps keep your property safe, organized, and compliant.
+
+## Typical Repainting Schedule
+
+Most lots should be repainted every 12 to 24 months, depending on traffic volume and weather.
+
+## Signs It Is Time To Repaint
+
+Common warning signs include:
+
+- Faded or hard-to-see lines
+- Worn ADA symbols
+- Cracking or peeling paint
+- Confusing traffic flow
+
+## Factors That Affect Lifespan
+
+Striping wears faster with:
+
+- Heavy vehicle traffic
+- Snow plowing
+- Intense UV exposure
+- Frequent rain and standing water
+
+## Best Time of Year To Restripe
+
+Dry, mild weather provides the best results. Many property owners schedule striping during spring or early fall.
+
+## Why Routine Repainting Matters
+
+Fresh striping improves:
+
+- Driver safety
+- Property appearance
+- ADA compliance
+- Overall traffic organization
+`,
+  },
+
+  "parking-lot-maintenance": {
+    title: "Fire Lane Marking Requirements: What Property Owners Need to Know",
+    excerpt:
+      "Understand common fire lane striping rules, signage requirements, and maintenance best practices for commercial properties.",
+    image: "/images/striping-work.jpg",
+    date: "February 20, 2026",
+    readTime: "7 min read",
+    content: `
+Fire lane markings are essential for emergency access and public safety.
+
+## Why Fire Lane Markings Matter
+
+Clearly marked fire lanes help emergency responders access buildings quickly during critical situations.
+
+## Common Fire Lane Requirements
+
+Local codes vary, but many jurisdictions require:
+
+- Red curb or red painted lane boundaries
+- "FIRE LANE - NO PARKING" stenciling
+- Reflective or visible signage
+- Continuous visibility and maintenance
+
+## How Often Should Fire Lanes Be Repainted
+
+Inspect markings at least annually and repaint whenever markings become faded or difficult to read.
+
+## Compliance Risks
+
+Unclear fire lane markings can lead to:
+
+- Code violations
+- Fines
+- Increased liability
+- Slower emergency response
+
+## Professional Striping Helps
+
+Professional crews can ensure your fire lanes meet local code requirements and remain highly visible year-round.
+`,
+  },
+
+  "signs-your-parking-lot-needs-new-striping": {
+    title: "How Weather Affects Parking Lot Striping Durability",
+    excerpt:
+      "Sun, rain, and temperature fluctuations all impact your striping. Learn how to plan maintenance around seasonal changes.",
+    image: "/images/hero-parking.jpg",
+    date: "February 12, 2026",
+    readTime: "5 min read",
+    content: `
+Weather has a major impact on how long parking lot striping remains visible and effective.
+
+## Sun and UV Exposure
+
+Strong sunlight can fade paint quickly, especially in open lots with no shade.
+
+## Rain and Moisture
+
+Frequent rain and standing water can wear down striping and reduce adhesion over time.
+
+## Temperature Swings
+
+Freeze-thaw cycles and extreme heat can cause pavement movement that accelerates line wear.
+
+## Snow and Ice Removal
+
+Plows and de-icing chemicals can abrade or damage striping during winter months.
+
+## Maintenance Tips
+
+To improve durability:
+
+- Use quality traffic paint or thermoplastic
+- Repaint before markings become severely faded
+- Schedule regular inspections
+- Address drainage issues to limit standing water
+`,
+  },
+
   "thermoplastic-vs-paint-striping": {
     title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
     excerpt:
