@@ -9,16 +9,16 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "services", label: "Services" },
-  { href: "blog", label: "Blog" },
-  { href: "parking-lot-striping-tulsa", label: "Tulsa" },
-  { href: "parking-lot-striping-wichita", label: "Wichita" },
-  { href: "parking-lot-striping-boise", label: "Boise" },
-  { href: "parking-lot-striping-omaha", label: "Omaha" },
-  { href: "parking-lot-striping-tampa", label: "Tampa" },
-  { href: "parking-lot-striping-albuquerque", label: "Albuquerque" },
+  { href: "/services", label: "Services" },
+  { href: "/blog", label: "Blog" },
+  { href: "/parking-lot-striping-tulsa", label: "Tulsa" },
+  { href: "/parking-lot-striping-wichita", label: "Wichita" },
+  { href: "/parking-lot-striping-boise", label: "Boise" },
+  { href: "/parking-lot-striping-omaha", label: "Omaha" },
+  { href: "/parking-lot-striping-tampa", label: "Tampa" },
+  { href: "/parking-lot-striping-albuquerque", label: "Albuquerque" },
   // { href: "testimonials", label: "Testimonials" },
-  { href: "contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
