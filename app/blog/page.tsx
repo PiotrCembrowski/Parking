@@ -64,6 +64,17 @@ const posts = [
     category: "Materials",
     image: "/images/ada-marking.jpg",
   },
+  // ─── NEW POST ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-to-choose-parking-lot-striping-contractor",
+    title:
+      "How to Choose a Parking Lot Striping Contractor (Without Getting Burned)",
+    excerpt:
+      "Not all striping contractors are equal. Learn the seven questions every property owner should ask before hiring — and the red flags that signal a contractor to avoid.",
+    date: "April 14, 2026",
+    category: "Hiring Guide",
+    image: "/images/striping-work.jpg",
+  },
 ];
 
 export default function BlogPage() {

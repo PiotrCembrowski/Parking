@@ -132,8 +132,6 @@ New striping improves:
 `,
   },
 
-
-
   "how-often-repaint-parking-lot-lines": {
     title: "How Often Should Parking Lot Lines Be Repainted?",
     excerpt:
@@ -619,6 +617,145 @@ Whether you choose paint or thermoplastic, professional striping improves safety
 
 If your parking lot lines are faded, difficult to see, or outdated, now is the perfect time to upgrade your striping and improve your property's appearance and safety.
 
+`,
+  },
+
+  // ─── NEW POST ─────────────────────────────────────────────────────────────
+  "how-to-choose-parking-lot-striping-contractor": {
+    title:
+      "How to Choose a Parking Lot Striping Contractor (Without Getting Burned)",
+    excerpt:
+      "Not all striping contractors are equal. Learn the seven questions every property owner should ask before hiring — and the red flags that signal a contractor to avoid.",
+    image: "/images/striping-work.jpg",
+    date: "April 14, 2026",
+    readTime: "9 min read",
+    content: `
+Hiring the wrong parking lot striping contractor is a mistake that costs more than you expect. Bad workmanship fades in months, not years. Incorrect ADA layouts expose you to five-figure fines. Uninsured crews leave you liable for on-site injuries. And because most property owners only think about striping when the lot already looks embarrassing, they end up hiring in a hurry — which is exactly when bad decisions happen.
+
+This guide walks you through exactly how to evaluate and hire a professional striping contractor, what questions to ask, what answers to listen for, and which red flags to walk away from.
+
+## Why Contractor Quality Varies So Much
+
+The parking lot striping industry has one of the lowest barriers to entry of any commercial service. A used line-striper machine costs $2,000–$6,000. A few gallons of traffic paint, a pickup truck, and a contractor can be in business by next week.
+
+That means the market includes everything from 30-year operators with a fleet of commercial equipment and ADA-certified crews — to someone who bought a machine last month and is learning on your lot.
+
+The finished product looks almost identical on day one. By month six, the difference is obvious. By month twelve, the cut-rate job looks like it was never done.
+
+## What to Look for in a Striping Contractor
+
+### Professional Equipment
+
+Commercial parking lot striping requires self-propelled or ride-on airless striping machines that apply paint at a consistent film thickness and line width. These machines produce sharp, clean edges and consistent coverage across the entire lot.
+
+Walk-behind hand-push stripers are acceptable for small touch-up work or tight interior areas. What is not acceptable is brush application, roller application, or consumer-grade paint sprayers — all of which produce uneven coverage, poor adhesion, and significantly shorter lifespan.
+
+Ask any contractor: what equipment do you use for a standard commercial re-stripe? If the answer is vague or they cannot name the machine, probe further or move on.
+
+### Commercial-Grade Paint
+
+Not all traffic paint is the same. Professional contractors use high-solids waterborne acrylic traffic paint with a solids content of 55% or higher. Higher solids content means more actual pigment and binder per gallon, which translates directly to better coverage, brighter color, and longer lifespan.
+
+Budget operators often use low-solids paint that costs significantly less per gallon. It applies easily, dries fast, and looks fine on day one. Within six months it starts to chalk, fade, and flake because there simply was not enough material applied to the surface to withstand traffic and weather.
+
+Ask the contractor: what brand and product do you use, and what is the solids content? A contractor who cannot answer that question is not specifying paint — they are buying whatever is cheapest at the supply house that week.
+
+### Blackout Process for Re-Striping
+
+This is the single clearest indicator of professional versus amateur work. When re-striping an existing lot, old lines must be blacked out — covered with black traffic paint — before new lines are applied. Painting new lines directly over faded old ones creates ghost lines, double lines, and a cluttered appearance that confuses drivers and looks unprofessional within months.
+
+Ask specifically: do you black out old lines before re-striping? If the answer is that blackout is not necessary or that they paint over old lines, that contractor is not meeting professional standards. Walk away.
+
+### ADA Knowledge and Compliance Audit
+
+Federal ADA law requires a specific number of correctly dimensioned and marked accessible parking spaces in every commercial lot. The requirements involve minimum stall widths, access aisle dimensions, van-accessible space ratios, signage height, and surface conditions.
+
+A professional striping contractor should be able to:
+
+- Determine how many ADA spaces your lot is required to provide based on total space count
+- Identify whether your current accessible stalls meet dimensional requirements
+- Recognize when van-accessible spaces are missing or incorrectly sized
+- Know the signage requirements and flag when signs need to be added or relocated
+
+Ask the contractor: will you audit my current lot for ADA compliance as part of the estimate? A confident yes — followed by a description of what they check — indicates a contractor who takes compliance seriously. Vagueness on this question is a meaningful warning sign.
+
+### Proof of Insurance
+
+Before any contractor steps onto your property, verify two things: general liability insurance and workers' compensation coverage. Ask for certificates of insurance naming your property as an additionally insured party.
+
+General liability covers property damage if the contractor's equipment or operations damage your pavement, vehicles, or building. Workers' compensation covers crew injuries on your property — without it, an injured worker may have grounds to pursue a claim directly against you as the property owner.
+
+An uninsured or underinsured contractor is not a bargain. They are a liability transfer.
+
+### References From Similar Properties
+
+Ask for references from commercial properties similar to yours in size and type — retail centers, office parks, medical facilities, apartment complexes, warehouses. Call those references and ask specific questions: Did the lines hold up? Were they on time? Did they blackout old lines? Were there any ADA issues after the job?
+
+A contractor who hesitates to provide references, provides only residential references, or gives you references who cannot be reached is showing you something important.
+
+### Itemized Written Quote
+
+A professional contractor provides a written, itemized quote that breaks down the cost of every element: line striping per linear foot, ADA stalls each, fire lane striping per linear foot, directional arrows each, blackout work, and any other scope items. This document protects both parties and makes it easy to compare quotes from multiple contractors on an apples-to-apples basis.
+
+A single total number with no breakdown is a red flag. It makes it impossible to evaluate whether you are being charged fairly for each element, and it gives the contractor flexibility to skip scope items you assumed were included.
+
+## Red Flags That Signal a Contractor to Avoid
+
+These are patterns that experienced property managers learn to recognize quickly.
+
+**No written quote.** Verbal pricing is a recipe for disputes. Any reputable contractor will put the scope and price in writing before work begins.
+
+**Unusually low price with no explanation.** A quote that is 40–50% below other bids is almost always explained by one or more of: lower-quality paint, no blackout process, no insurance, or a misunderstanding of the scope. Ask specifically what is and is not included.
+
+**Cannot explain their paint product.** If a contractor cannot tell you what paint they use and why it is appropriate for your climate and traffic conditions, they are not specifying materials — they are buying whatever is cheapest.
+
+**No ADA discussion.** Any professional re-stripe of a commercial lot should include at minimum a visual check of ADA compliance. A contractor who does not raise the topic at all is not protecting you from a significant liability.
+
+**Pressure to decide immediately.** "I have a crew available today, but only today" is a sales tactic, not a professional scheduling practice. Legitimate contractors schedule in advance.
+
+**No physical business presence.** A contractor with no website, no Google Business Profile, no verifiable address, and reviews that cannot be cross-referenced is a meaningful risk. You need to be able to reach them after the job is done.
+
+## Questions to Ask Every Contractor Before Hiring
+
+Use this checklist when evaluating bids:
+
+- What striping machine do you use for commercial lots?
+- What paint product and solids content do you specify?
+- Do you black out old lines before re-striping? What is your blackout process?
+- Will you audit my lot for ADA compliance as part of the estimate?
+- Do you carry general liability and workers' compensation insurance? Can you provide certificates?
+- Can you provide references from similar commercial properties?
+- Will you provide a written, itemized quote before work begins?
+- How do you handle scheduling around weather? What happens if it rains?
+- What is your warranty or callback policy if there are quality issues?
+
+A contractor who answers these questions confidently, specifically, and consistently is worth hiring. A contractor who deflects, generalizes, or seems unfamiliar with the questions is telling you something important about how they operate.
+
+## How to Compare Multiple Quotes
+
+Get at least three quotes for any striping project of meaningful size. When comparing them, look beyond the total price and evaluate:
+
+**Scope alignment.** Do all three quotes include the same elements — blackout, ADA, fire lanes, arrows? If one quote is significantly lower, identify what is missing rather than assuming it is a better price.
+
+**Paint specification.** If contractors specify different paint products, research the specifications. A higher price using a higher-solids paint may be the better long-term value.
+
+**Timeline.** How far out is each contractor scheduled? Availability is not inherently a quality signal, but a contractor who can start tomorrow on a large commercial job may be underbooked for a reason.
+
+**Professionalism of the quote itself.** A detailed, clearly formatted written quote with line items and terms reflects how the contractor runs their business. A handwritten number on a business card reflects the same.
+
+## The Value of a Long-Term Relationship
+
+The property managers who get consistently good results from striping are not the ones who re-bid the job to the cheapest option every cycle. They find a contractor they trust, establish a maintenance schedule, and treat striping as a managed service rather than a one-time transaction.
+
+A contractor who knows your property, understands your traffic patterns, and has records of what was done and when will serve you significantly better than an anonymous low bidder who has never seen your lot before showing up with a machine.
+
+Establish that relationship early, communicate clearly, and you will spend less time managing striping problems and more time on everything else.
+
+## Get a Free Professional Estimate
+
+If your parking lot lines are faded, your ADA stalls are questionable, or you simply cannot remember the last time the lot was properly maintained, the first step is a professional on-site assessment. A qualified striping contractor can evaluate your current markings, identify compliance gaps, and provide an itemized quote with no obligation.
+
+That conversation costs you nothing and gives you the information you need to make a smart decision.
 `,
   },
 };
