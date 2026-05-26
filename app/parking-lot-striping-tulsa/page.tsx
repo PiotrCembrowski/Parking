@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.striping.site/parking-lot-striping-tulsa",
   },
+  openGraph: {
+    title: "Parking Lot Striping Tulsa OK | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Tulsa, OK. ADA markings, fire lanes, re-striping & new layouts. Free estimates. Fast 24–48 hr turnaround.",
+    url: "https://www.striping.site/parking-lot-striping-tulsa",
+    siteName: "PrecisionLine Striping",
+    images: [
+      {
+        url: "https://www.striping.site/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Parking lot striping Tulsa Oklahoma",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parking Lot Striping Tulsa OK | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Tulsa, OK. ADA markings, fire lanes, re-striping & new layouts. Free estimates.",
+    images: ["https://www.striping.site/images/og-image.jpg"],
+  },
 };
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -796,6 +820,65 @@ export default function TulsaPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Partner Services ── */}
+      <section className="py-16 bg-muted">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-center">
+            Complete Parking Lot Maintenance in Tulsa
+          </h2>
+          <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
+            Fresh striping bonds best to a clean surface. For best results — and
+            the longest paint lifespan — we recommend scheduling a professional
+            lot sweep before your re-stripe appointment. Our trusted local
+            partner{" "}
+            <a
+              href="https://www.parkinglotsweepingpros.site"
+              target="_blank"
+              rel="noopener"
+              className="text-accent hover:underline font-medium"
+            >
+              Parking Lot Sweeping Pros
+            </a>{" "}
+            provides commercial sweeping across Tulsa with flexible day and
+            evening scheduling. Coordinating both services ensures your new
+            markings adhere properly and last the full 18–24 month cycle rather
+            than failing early due to surface contamination.
+          </p>
+          <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="bg-background rounded-xl p-6 border border-border text-center">
+              <p className="font-semibold text-base mb-1">
+                Parking Lot Striping
+              </p>
+              <p className="text-sm text-muted-foreground mb-3">
+                ADA markings, fire lanes, re-striping
+              </p>
+              <Link
+                href="/contact"
+                className="text-sm text-accent hover:underline font-medium"
+              >
+                Get a striping estimate →
+              </Link>
+            </div>
+            <div className="bg-background rounded-xl p-6 border border-border text-center">
+              <p className="font-semibold text-base mb-1">
+                Parking Lot Sweeping
+              </p>
+              <p className="text-sm text-muted-foreground mb-3">
+                Commercial sweep before re-stripe
+              </p>
+              <a
+                href="https://www.parkinglotsweepingpros.site"
+                target="_blank"
+                rel="noopener"
+                className="text-sm text-accent hover:underline font-medium"
+              >
+                Get a sweeping estimate →
+              </a>
+            </div>
           </div>
         </div>
       </section>

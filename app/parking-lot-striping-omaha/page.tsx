@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.striping.site/parking-lot-striping-omaha",
   },
+  openGraph: {
+    title: "Parking Lot Striping Omaha NE | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Omaha, NE. ADA markings, fire lanes, re-striping & new layouts. Free estimates. Fast 24–48 hr turnaround.",
+    url: "https://www.striping.site/parking-lot-striping-omaha",
+    siteName: "PrecisionLine Striping",
+    images: [
+      {
+        url: "https://www.striping.site/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Parking lot striping Omaha Nebraska",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parking Lot Striping Omaha NE | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Omaha, NE. ADA markings, fire lanes, re-striping & new layouts. Free estimates.",
+    images: ["https://www.striping.site/images/og-image.jpg"],
+  },
 };
 
 // ─── DATA ────────────────────────────────────────────────────────────────────

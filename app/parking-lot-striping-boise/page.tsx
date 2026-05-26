@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.striping.site/parking-lot-striping-boise",
   },
+  openGraph: {
+    title: "Parking Lot Striping Boise ID | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Boise, ID. ADA markings, fire lanes, re-striping & new layouts. Free estimates. Fast 24–48 hr turnaround.",
+    url: "https://www.striping.site/parking-lot-striping-boise",
+    siteName: "PrecisionLine Striping",
+    images: [
+      {
+        url: "https://www.striping.site/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Parking lot striping Boise Idaho",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parking Lot Striping Boise ID | ADA & Fire Lane Marking",
+    description:
+      "Professional parking lot striping in Boise, ID. ADA markings, fire lanes, re-striping & new layouts. Free estimates.",
+    images: ["https://www.striping.site/images/og-image.jpg"],
+  },
 };
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
