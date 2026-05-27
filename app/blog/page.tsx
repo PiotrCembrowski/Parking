@@ -19,8 +19,9 @@ const posts = [
     category: "Compliance",
     image: "/images/ada-marking.jpg",
   },
+
   {
-    slug: "how-often-repaint-parking-lot-lines",
+    slug: "how-often-should-parking-lot-lines-be-repainted",
     title: "How Often Should Parking Lot Lines Be Repainted?",
     excerpt:
       "Parking lot striping is more than just paint on asphalt—it plays a critical role in safety, organization, and the overall functionality of a commercial property.",
@@ -28,26 +29,29 @@ const posts = [
     category: "Maintenance",
     image: "/images/striping-work.jpg",
   },
+
   {
-    slug: "parking-lot-striping-cost",
-    title: "Parking Lot Layout: Maximizing Your Available Space",
+    slug: "parking-lot-striping-cost-guide",
+    title: "Parking Lot Striping Cost Guide",
     excerpt:
       "Understanding the cost of parking lot striping is essential for businesses that want to maintain safe and professional-looking properties.",
     date: "February 28, 2026",
-    category: "Design",
+    category: "Pricing",
     image: "/images/hero-parking.jpg",
   },
+
   {
-    slug: "parking-lot-maintenance",
+    slug: "fire-lane-marking-requirements",
     title: "Fire Lane Marking Requirements: What Property Owners Need to Know",
     excerpt:
-      "Parking lot striping is a critical part of maintaining a safe, organized, and professional commercial property. ",
+      "Parking lot striping is a critical part of maintaining a safe, organized, and professional commercial property.",
     date: "February 20, 2026",
     category: "Compliance",
     image: "/images/striping-work.jpg",
   },
+
   {
-    slug: "signs-your-parking-lot-needs-new-striping",
+    slug: "how-weather-affects-parking-lot-striping",
     title: "How Weather Affects Parking Lot Striping Durability",
     excerpt:
       "Sun, rain, and temperature fluctuations all impact your striping. Learn how to plan maintenance around seasonal changes.",
@@ -55,6 +59,7 @@ const posts = [
     category: "Maintenance",
     image: "/images/hero-parking.jpg",
   },
+
   {
     slug: "thermoplastic-vs-paint-striping",
     title: "Thermoplastic vs. Paint: Which Striping Material Is Right for You?",
@@ -64,7 +69,7 @@ const posts = [
     category: "Materials",
     image: "/images/ada-marking.jpg",
   },
-  // ─── NEW POST ───────────────────────────────────────────────────────────────
+
   {
     slug: "how-to-choose-parking-lot-striping-contractor",
     title:
