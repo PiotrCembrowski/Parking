@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle, Send, Loader2 } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,6 +42,7 @@ export function ContactForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -53,6 +54,7 @@ export function ContactForm() {
       }
 
       setSubmitState("success");
+
       setFormData({
         name: "",
         email: "",
@@ -61,7 +63,7 @@ export function ContactForm() {
         service: "",
         message: "",
       });
-    } catch (err) {
+    } catch {
       setSubmitState("error");
       setErrorMessage(
         "We couldn't send your message right now. Please try again.",
@@ -70,25 +72,6 @@ export function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
-  if (submitState === "success") {
-    return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <CheckCircle className="mb-4 h-12 w-12 text-green-600" />
-        <h3 className="text-xl font-semibold">Thank you!</h3>
-        <p className="mt-2 text-muted-foreground">
-          We've received your message and will be in touch within 24 hours.
-        </p>
-        <Button
-          variant="outline"
-          className="mt-6"
-          onClick={() => setSubmitState("idle")}
-        >
-          Send another message
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -194,6 +177,12 @@ export function ContactForm() {
           disabled={isSubmitting}
         />
       </div>
+
+      {submitState === "success" && (
+        <p className="text-sm text-green-600 font-medium">
+          Thank you for your submission.
+        </p>
+      )}
 
       {submitState === "error" && (
         <p className="text-sm text-red-600 font-medium">{errorMessage}</p>
