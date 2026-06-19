@@ -80,6 +80,17 @@ const posts = [
     category: "Hiring Guide",
     image: "/images/striping-work.jpg",
   },
+
+  {
+    slug: "parking-lot-striping-omaha-guide",
+    title:
+      "Parking Lot Striping in Omaha: The Complete 2026 Guide for Property Owners",
+    excerpt:
+      "Everything Omaha commercial property owners need to know about parking lot striping — local code requirements, what Nebraska winters do to your lines, costs, and how often to restripe.",
+    date: "May 26, 2026",
+    category: "Omaha",
+    image: "/images/striping-work.jpg",
+  },
 ];
 
 export default function BlogPage() {
