@@ -3,7 +3,8 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://striping.site";
 
-  const cities = ["tulsa", "albuquerque", "omaha", "boise", "wichita"];
+  // Other city entries are left as-is intentionally (out of scope for this change).
+  const cities = ["tulsa", "albuquerque", "boise", "wichita"];
 
   const cityPages = cities.map((city) => ({
     url: `${baseUrl}/${city}`,
@@ -20,5 +21,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...cityPages,
+    {
+      // Omaha service page (corrected to the real route).
+      url: `${baseUrl}/parking-lot-striping-omaha`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      // Omaha case study — funnels link equity to the Omaha service page.
+      url: `${baseUrl}/projects/omaha-commercial-restripe`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }
