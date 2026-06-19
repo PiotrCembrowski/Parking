@@ -265,7 +265,7 @@ Freeze-thaw cycles and extreme heat can cause pavement movement that accelerates
 
 ## Snow and Ice Removal
 
-Plows and de-icing chemicals can abrade or damage striping during winter months.
+Plows and de-icing chemicals can abrade or damage striping during winter months. In heavy-salt, freeze-thaw climates this damage accelerates dramatically — see how our crews spec salt-resistant paint for these conditions on our <a href="/parking-lot-striping-omaha">parking lot striping in Omaha</a> service page.
 
 ## Maintenance Tips
 
@@ -771,9 +771,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div key={index} className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">{title}</h2>
 
-                <p className="text-muted-foreground whitespace-pre-line">
-                  {content.join("\n")}
-                </p>
+                <p
+                  className="text-muted-foreground whitespace-pre-line [&_a]:text-accent [&_a]:underline"
+                  dangerouslySetInnerHTML={{ __html: content.join("\n") }}
+                />
               </div>
             );
           })}

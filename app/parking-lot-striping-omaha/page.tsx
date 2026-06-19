@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import Script from "next/script";
+import { OMAHA_PHONE, OMAHA_PHONE_TEL } from "@/lib/config";
 import {
   CheckCircle,
   Clock,
@@ -17,8 +18,12 @@ import {
 // ─── SEO METADATA ────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: "Parking Lot Striping Omaha NE | ADA & Fire Lane Marking",
-  description:
-    "Professional parking lot striping in Omaha, NE. ADA markings, fire lanes, re-striping & new layouts for commercial properties. Free estimates. Fast 24–48 hr turnaround. Call (402) 555-0161.",
+  description: `Professional parking lot striping in Omaha, NE. ADA markings, fire lanes, re-striping & new layouts for commercial properties. Free estimates. Fast 24–48 hr turnaround. Call ${OMAHA_PHONE}.`,
+  keywords: [
+    "parking lot striping Omaha NE",
+    "Omaha Municipal Code Chapter 55",
+    "MUTCD compliant striping Omaha",
+  ],
   alternates: {
     canonical: "https://www.striping.site/parking-lot-striping-omaha",
   },
@@ -233,9 +238,10 @@ const faqs = [
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
 export default function OmahaPage() {
-  // NOTE: Replace (402) 555-0161 with your real Omaha tracking number before launch.
-  const phone = "(402) 555-0161";
-  const phoneTel = "tel:+14025550161";
+  // Phone is sourced from lib/config.ts — swap the placeholder there with the
+  // real Omaha CallRail tracking number before launch (single source of truth).
+  const phone = OMAHA_PHONE;
+  const phoneTel = OMAHA_PHONE_TEL;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -246,7 +252,7 @@ export default function OmahaPage() {
         name: "PrecisionLine Striping – Omaha",
         image: "https://www.striping.site/images/hero-parking.jpg",
         url: "https://www.striping.site/parking-lot-striping-omaha",
-        telephone: "+14025550161",
+        telephone: OMAHA_PHONE_TEL.replace("tel:", ""),
         email: "omaha@precisionline.com",
         address: {
           "@type": "PostalAddress",
@@ -698,6 +704,16 @@ export default function OmahaPage() {
                 spaces and signage at correct mounting heights.
               </p>
 
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Parking lot markings in Omaha must also comply with the federal
+                Manual on Uniform Traffic Control Devices (MUTCD) and the City of
+                Omaha Municipal Code Chapter 55. Our crews apply MUTCD-compliant
+                line widths, colors, and stencil placement on every Omaha
+                project, and we verify ADA stall counts and dimensions against
+                the 2010 ADA Standards for Accessible Design as part of every
+                free estimate.
+              </p>
+
               <ul className="mt-6 space-y-3">
                 {[
                   "Correct number of accessible spaces per lot size",
@@ -863,6 +879,17 @@ export default function OmahaPage() {
               </span>
             ))}
           </div>
+
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            See a recent example of our work:{" "}
+            <Link
+              href="/projects/omaha-commercial-restripe"
+              className="text-accent hover:underline"
+            >
+              Omaha commercial parking lot re-striping case study
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
