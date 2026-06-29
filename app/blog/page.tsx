@@ -91,6 +91,17 @@ const posts = [
     category: "Omaha",
     image: "/images/striping-work.jpg",
   },
+
+  {
+    slug: "omaha-new-construction-parking-lot-striping",
+    title:
+      "New Construction Parking Lot Striping in Omaha: A Developer's Guide",
+    excerpt:
+      "Striping a brand-new commercial lot in Omaha is different from re-striping an old one. Here's what developers and general contractors need to know about timing, curing, and ADA layout on fresh asphalt.",
+    date: "June 9, 2026",
+    category: "Omaha",
+    image: "/images/striping-work.jpg",
+  },
 ];
 
 export default function BlogPage() {

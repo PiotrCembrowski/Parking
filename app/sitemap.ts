@@ -42,5 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      // Omaha new-construction striping guide (blog post).
+      url: `${baseUrl}/blog/omaha-new-construction-parking-lot-striping`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }
