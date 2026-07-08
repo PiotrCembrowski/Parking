@@ -49,5 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      // Omaha striping cost breakdown (blog post).
+      url: `${baseUrl}/blog/parking-lot-striping-omaha-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

@@ -102,6 +102,17 @@ const posts = [
     category: "Omaha",
     image: "/images/striping-work.jpg",
   },
+
+  {
+    slug: "parking-lot-striping-omaha-cost",
+    title:
+      "How Much Does Parking Lot Striping Cost in Omaha? A Complete Price Breakdown",
+    excerpt:
+      "A full pricing breakdown for parking lot striping in Omaha — by lot size, by service type, what drives the price up or down, and how to read a quote so you're not surprised.",
+    date: "July 14, 2026",
+    category: "Omaha",
+    image: "/images/hero-parking.jpg",
+  },
 ];
 
 export default function BlogPage() {
